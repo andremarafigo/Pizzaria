@@ -52,134 +52,92 @@
                             <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1024.png" translatesAutoresizingMaskIntoConstraints="NO" id="UMm-PI-F9F">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rtn-fm-8f1">
-                                <rect key="frame" x="0.0" y="64" width="375" height="150"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IPizza" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqP-t4-UKg">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
-                                        <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="30"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="shadowColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <size key="shadowOffset" width="0.0" height="0.0"/>
-                                    </label>
-                                </subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IPizza" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqP-t4-UKg">
+                                <rect key="frame" x="0.0" y="64" width="375" height="102"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="shadowColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKv-BN-vNj">
+                                <rect key="frame" x="0.0" y="236" width="375" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="0Zy-xs-dxa"/>
-                                    <constraint firstItem="IqP-t4-UKg" firstAttribute="leading" secondItem="Rtn-fm-8f1" secondAttribute="leading" id="UsM-cX-yVj"/>
-                                    <constraint firstItem="IqP-t4-UKg" firstAttribute="top" secondItem="Rtn-fm-8f1" secondAttribute="top" id="oo5-SP-5iK"/>
-                                    <constraint firstAttribute="bottom" secondItem="IqP-t4-UKg" secondAttribute="bottom" id="u1a-q3-4FR"/>
-                                    <constraint firstAttribute="trailing" secondItem="IqP-t4-UKg" secondAttribute="trailing" id="vSb-jr-Imy"/>
-                                </constraints>
-                            </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Jls-V8-rYH">
-                                <rect key="frame" x="0.0" y="214" width="375" height="453"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IKr-bM-Sjz">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="226.5"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pK0-Qz-C0U">
-                                                <rect key="frame" x="0.0" y="50" width="375" height="100"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bz1-qI-Kdl">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="Pedidos">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <segue destination="ouz-Bn-84l" kind="show" id="3qC-Y4-d0A"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKv-BN-vNj">
-                                                        <rect key="frame" x="0.0" y="35" width="375" height="30"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="Cadastrar Sabor">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <segue destination="Wwo-RX-TMm" kind="show" id="HoE-zY-9Qg"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="655-Ih-Q6y">
-                                                        <rect key="frame" x="0.0" y="70" width="375" height="30"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="Cadastrar Clientes">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        </state>
-                                                        <connections>
-                                                            <segue destination="tIc-SX-mSg" kind="show" id="dB4-ek-rLh"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </stackView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="pK0-Qz-C0U" firstAttribute="leading" secondItem="IKr-bM-Sjz" secondAttribute="leading" id="60L-2U-dX4"/>
-                                            <constraint firstItem="pK0-Qz-C0U" firstAttribute="top" secondItem="IKr-bM-Sjz" secondAttribute="top" constant="50" id="9Fk-r7-hSe"/>
-                                            <constraint firstAttribute="trailing" secondItem="pK0-Qz-C0U" secondAttribute="trailing" id="ee5-3A-vOK"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVb-9m-Xea">
-                                        <rect key="frame" x="0.0" y="226.5" width="375" height="226.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4Q-ff-6HG">
-                                                <rect key="frame" x="0.0" y="146.5" width="375" height="30"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="jPf-3Y-pss"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                <state key="normal" title="Sobre">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="Ue9-0N-VCg" kind="show" id="KeT-Zl-Ukc"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="a4Q-ff-6HG" secondAttribute="trailing" id="1q4-Cs-esZ"/>
-                                            <constraint firstItem="a4Q-ff-6HG" firstAttribute="leading" secondItem="nVb-9m-Xea" secondAttribute="leading" id="31h-UA-AiS"/>
-                                            <constraint firstAttribute="bottom" secondItem="a4Q-ff-6HG" secondAttribute="bottom" constant="50" id="V9F-DF-eCU"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="nVb-9m-Xea" firstAttribute="top" secondItem="IKr-bM-Sjz" secondAttribute="bottom" id="j92-9o-joe"/>
-                                </constraints>
-                            </stackView>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Cadastrar Sabor">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Wwo-RX-TMm" kind="show" id="HoE-zY-9Qg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="655-Ih-Q6y">
+                                <rect key="frame" x="0.0" y="276" width="375" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Cadastrar Clientes">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="tIc-SX-mSg" kind="show" id="dB4-ek-rLh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4Q-ff-6HG">
+                                <rect key="frame" x="0.0" y="607" width="375" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Sobre">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Ue9-0N-VCg" kind="show" id="KeT-Zl-Ukc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bz1-qI-Kdl">
+                                <rect key="frame" x="0.0" y="196" width="375" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Pedidos">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ouz-Bn-84l" kind="show" id="3qC-Y4-d0A"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Jls-V8-rYH" firstAttribute="top" secondItem="Rtn-fm-8f1" secondAttribute="bottom" id="EqE-Sn-EAD"/>
-                            <constraint firstAttribute="trailing" secondItem="Jls-V8-rYH" secondAttribute="trailing" id="ILa-c4-E5S"/>
-                            <constraint firstItem="UMm-PI-F9F" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="INN-DN-eWQ"/>
-                            <constraint firstItem="Rtn-fm-8f1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NuR-48-Cct"/>
-                            <constraint firstItem="Rtn-fm-8f1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bq7-Rf-119"/>
-                            <constraint firstAttribute="bottom" secondItem="UMm-PI-F9F" secondAttribute="bottom" id="nrW-wO-ZQV"/>
-                            <constraint firstItem="Jls-V8-rYH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pWh-8j-BBg"/>
-                            <constraint firstAttribute="trailing" secondItem="UMm-PI-F9F" secondAttribute="trailing" id="qCe-yT-tMf"/>
-                            <constraint firstAttribute="bottom" secondItem="UMm-PI-F9F" secondAttribute="bottom" id="sym-Mf-gpd"/>
-                            <constraint firstItem="UMm-PI-F9F" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wQI-gx-omd"/>
-                            <constraint firstAttribute="bottom" secondItem="Jls-V8-rYH" secondAttribute="bottom" id="wS9-3m-5rO"/>
-                            <constraint firstItem="UMm-PI-F9F" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wcf-cP-EiP"/>
-                            <constraint firstItem="UMm-PI-F9F" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ymD-vZ-39C"/>
-                            <constraint firstItem="Rtn-fm-8f1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zEX-ef-w3y"/>
-                            <constraint firstAttribute="trailing" secondItem="UMm-PI-F9F" secondAttribute="trailing" id="zc5-gE-C4E"/>
+                            <constraint firstAttribute="trailing" secondItem="NKv-BN-vNj" secondAttribute="trailing" id="38t-qj-Ohc"/>
+                            <constraint firstItem="NKv-BN-vNj" firstAttribute="top" secondItem="Bz1-qI-Kdl" secondAttribute="bottom" constant="10" id="801-pE-DOl"/>
+                            <constraint firstItem="NKv-BN-vNj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8Mm-G2-Vr9"/>
+                            <constraint firstAttribute="bottom" secondItem="UMm-PI-F9F" secondAttribute="bottom" id="BgS-Ca-Cct"/>
+                            <constraint firstItem="UMm-PI-F9F" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Fqh-iV-FWa"/>
+                            <constraint firstAttribute="trailing" secondItem="IqP-t4-UKg" secondAttribute="trailing" id="HVA-4w-nFe"/>
+                            <constraint firstItem="655-Ih-Q6y" firstAttribute="top" secondItem="NKv-BN-vNj" secondAttribute="bottom" constant="10" id="K9A-ya-bKa"/>
+                            <constraint firstItem="IqP-t4-UKg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="RFM-yK-Xvb"/>
+                            <constraint firstItem="655-Ih-Q6y" firstAttribute="top" secondItem="NKv-BN-vNj" secondAttribute="bottom" constant="10" id="RGm-hB-zlN"/>
+                            <constraint firstItem="a4Q-ff-6HG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Skz-g4-7HT"/>
+                            <constraint firstItem="NKv-BN-vNj" firstAttribute="top" secondItem="Bz1-qI-Kdl" secondAttribute="bottom" constant="10" id="T6I-xd-ph5"/>
+                            <constraint firstAttribute="trailing" secondItem="655-Ih-Q6y" secondAttribute="trailing" id="TJV-nT-CRA"/>
+                            <constraint firstItem="Bz1-qI-Kdl" firstAttribute="top" secondItem="IqP-t4-UKg" secondAttribute="bottom" constant="30" id="W3N-eT-tCk"/>
+                            <constraint firstItem="UMm-PI-F9F" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="d1L-0p-hTo"/>
+                            <constraint firstItem="IqP-t4-UKg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jfY-PD-U0G"/>
+                            <constraint firstAttribute="trailing" secondItem="UMm-PI-F9F" secondAttribute="trailing" id="jws-VQ-Zbc"/>
+                            <constraint firstAttribute="bottom" secondItem="a4Q-ff-6HG" secondAttribute="bottom" constant="30" id="nQB-8U-8RH"/>
+                            <constraint firstItem="655-Ih-Q6y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pNC-BA-onh"/>
+                            <constraint firstAttribute="trailing" secondItem="Bz1-qI-Kdl" secondAttribute="trailing" id="r5H-vV-AGi"/>
+                            <constraint firstAttribute="trailing" secondItem="a4Q-ff-6HG" secondAttribute="trailing" id="rOu-ZC-SMN"/>
+                            <constraint firstItem="Bz1-qI-Kdl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="s3m-CI-U6o"/>
+                            <constraint firstItem="Bz1-qI-Kdl" firstAttribute="top" secondItem="IqP-t4-UKg" secondAttribute="bottom" constant="30" id="ulw-qC-F9e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
