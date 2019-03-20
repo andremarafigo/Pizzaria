@@ -7,15 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57A3770222405D76005F840A /* PizzasPedido.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3770122405D76005F840A /* PizzasPedido.swift */; };
+		57A3770622406D68005F840A /* PopulaBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3770522406D68005F840A /* PopulaBase.swift */; };
 		57A42048223C735B00488B78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A42047223C735B00488B78 /* AppDelegate.swift */; };
 		57A4204A223C735B00488B78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A42049223C735B00488B78 /* ViewController.swift */; };
 		57A4204D223C735B00488B78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A4204B223C735B00488B78 /* Main.storyboard */; };
 		57A42050223C735B00488B78 /* Pizzaria.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57A4204E223C735B00488B78 /* Pizzaria.xcdatamodeld */; };
 		57A42052223C735D00488B78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A42051223C735D00488B78 /* Assets.xcassets */; };
 		57A42055223C735D00488B78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A42053223C735D00488B78 /* LaunchScreen.storyboard */; };
+		966930D5223ECE2800B72EFD /* PedidosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966930D4223ECE2800B72EFD /* PedidosTableViewController.swift */; };
+		966930E5223EF4E400B72EFD /* PedidoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966930E4223EF4E400B72EFD /* PedidoViewModel.swift */; };
+		966930F5223F29BB00B72EFD /* Pedido.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966930F0223F29BA00B72EFD /* Pedido.swift */; };
+		966930F6223F29BB00B72EFD /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966930F1223F29BA00B72EFD /* Pizza.swift */; };
+		966930F7223F29BB00B72EFD /* Telefone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966930F2223F29BA00B72EFD /* Telefone.swift */; };
+		966930F8223F29BB00B72EFD /* Cliente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966930F3223F29BB00B72EFD /* Cliente.swift */; };
+		966930F9223F29BB00B72EFD /* Endereco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966930F4223F29BB00B72EFD /* Endereco.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57A3770122405D76005F840A /* PizzasPedido.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzasPedido.swift; sourceTree = "<group>"; };
+		57A3770522406D68005F840A /* PopulaBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulaBase.swift; sourceTree = "<group>"; };
 		57A42044223C735B00488B78 /* Pizzaria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pizzaria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A42047223C735B00488B78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57A42049223C735B00488B78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +35,13 @@
 		57A42051223C735D00488B78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57A42054223C735D00488B78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57A42056223C735D00488B78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		966930D4223ECE2800B72EFD /* PedidosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosTableViewController.swift; sourceTree = "<group>"; };
+		966930E4223EF4E400B72EFD /* PedidoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidoViewModel.swift; sourceTree = "<group>"; };
+		966930F0223F29BA00B72EFD /* Pedido.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pedido.swift; sourceTree = "<group>"; };
+		966930F1223F29BA00B72EFD /* Pizza.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
+		966930F2223F29BA00B72EFD /* Telefone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Telefone.swift; sourceTree = "<group>"; };
+		966930F3223F29BB00B72EFD /* Cliente.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cliente.swift; sourceTree = "<group>"; };
+		966930F4223F29BB00B72EFD /* Endereco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endereco.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +74,56 @@
 		57A42046223C735B00488B78 /* Pizzaria */ = {
 			isa = PBXGroup;
 			children = (
-				57A42047223C735B00488B78 /* AppDelegate.swift */,
-				57A42049223C735B00488B78 /* ViewController.swift */,
-				57A4204B223C735B00488B78 /* Main.storyboard */,
-				57A42051223C735D00488B78 /* Assets.xcassets */,
-				57A42053223C735D00488B78 /* LaunchScreen.storyboard */,
+				966930D3223ECCC700B72EFD /* ViewModel */,
+				966930D1223ECCAB00B72EFD /* Controller */,
+				966930D2223ECCB800B72EFD /* View */,
+				966930D0223ECC9F00B72EFD /* Model */,
 				57A42056223C735D00488B78 /* Info.plist */,
 				57A4204E223C735B00488B78 /* Pizzaria.xcdatamodeld */,
 			);
 			path = Pizzaria;
+			sourceTree = "<group>";
+		};
+		966930D0223ECC9F00B72EFD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				966930F3223F29BB00B72EFD /* Cliente.swift */,
+				966930F4223F29BB00B72EFD /* Endereco.swift */,
+				966930F0223F29BA00B72EFD /* Pedido.swift */,
+				966930F1223F29BA00B72EFD /* Pizza.swift */,
+				966930F2223F29BA00B72EFD /* Telefone.swift */,
+				57A3770122405D76005F840A /* PizzasPedido.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		966930D1223ECCAB00B72EFD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				57A42047223C735B00488B78 /* AppDelegate.swift */,
+				57A42049223C735B00488B78 /* ViewController.swift */,
+				966930D4223ECE2800B72EFD /* PedidosTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		966930D2223ECCB800B72EFD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57A42051223C735D00488B78 /* Assets.xcassets */,
+				57A4204B223C735B00488B78 /* Main.storyboard */,
+				57A42053223C735D00488B78 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		966930D3223ECCC700B72EFD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				966930E4223EF4E400B72EFD /* PedidoViewModel.swift */,
+				57A3770522406D68005F840A /* PopulaBase.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +197,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				966930F7223F29BB00B72EFD /* Telefone.swift in Sources */,
+				966930D5223ECE2800B72EFD /* PedidosTableViewController.swift in Sources */,
 				57A42050223C735B00488B78 /* Pizzaria.xcdatamodeld in Sources */,
 				57A4204A223C735B00488B78 /* ViewController.swift in Sources */,
+				57A3770222405D76005F840A /* PizzasPedido.swift in Sources */,
+				966930F5223F29BB00B72EFD /* Pedido.swift in Sources */,
+				966930F8223F29BB00B72EFD /* Cliente.swift in Sources */,
 				57A42048223C735B00488B78 /* AppDelegate.swift in Sources */,
+				966930F6223F29BB00B72EFD /* Pizza.swift in Sources */,
+				966930E5223EF4E400B72EFD /* PedidoViewModel.swift in Sources */,
+				966930F9223F29BB00B72EFD /* Endereco.swift in Sources */,
+				57A3770622406D68005F840A /* PopulaBase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

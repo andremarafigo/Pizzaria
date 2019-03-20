@@ -1,4 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Cliente" representedClassName=".Cliente" syncable="YES" codeGenerationType="class">
+        <attribute name="cpf" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="enderecos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Endereco" inverseName="cliente" inverseEntity="Endereco" syncable="YES"/>
+        <relationship name="pedidos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Pedido" inverseName="cliente" inverseEntity="Pedido" syncable="YES"/>
+        <relationship name="telefones" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Telefone" inverseName="cliente" inverseEntity="Telefone" syncable="YES"/>
+    </entity>
+    <entity name="Endereco" representedClassName="Endereco" syncable="YES" codeGenerationType="class">
+        <attribute name="cep" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nome_rua" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numero" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="cliente" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cliente" inverseName="enderecos" inverseEntity="Cliente" syncable="YES"/>
+    </entity>
+    <entity name="Pedido" representedClassName="Pedido" syncable="YES" codeGenerationType="class">
+        <attribute name="dataHora" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="valorTotal" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="cliente" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cliente" inverseName="pedidos" inverseEntity="Cliente" syncable="YES"/>
+        <relationship name="pizzasPedido" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PizzasPedido" inverseName="pedido" inverseEntity="PizzasPedido" syncable="YES"/>
+    </entity>
+    <entity name="Pizza" representedClassName="Pizza" syncable="YES" codeGenerationType="class">
+        <attribute name="sabor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tamanho" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="valor" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="pizzaPedido" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PizzasPedido" inverseName="pizza" inverseEntity="PizzasPedido" syncable="YES"/>
+    </entity>
+    <entity name="PizzasPedido" representedClassName="PizzasPedido" syncable="YES" codeGenerationType="class">
+        <attribute name="divisao" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="nPizza" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="quantidade" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="pedido" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pedido" inverseName="pizzasPedido" inverseEntity="Pedido" syncable="YES"/>
+        <relationship name="pizza" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pizza" inverseName="pizzaPedido" inverseEntity="Pizza" syncable="YES"/>
+    </entity>
+    <entity name="Telefone" representedClassName="Telefone" syncable="YES" codeGenerationType="class">
+        <attribute name="ddd" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="ddi" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="numero" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="cliente" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Cliente" inverseName="telefones" inverseEntity="Cliente" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Cliente" positionX="-31.1875" positionY="-117.9296875" width="128" height="120"/>
+        <element name="Endereco" positionX="-204.64453125" positionY="-110.9453125" width="128" height="103"/>
+        <element name="Pedido" positionX="-11.046875" positionY="83.9765625" width="128" height="103"/>
+        <element name="Pizza" positionX="-12.4375" positionY="338.23046875" width="128" height="103"/>
+        <element name="PizzasPedido" positionX="-200.86328125" positionY="163.94921875" width="128" height="118"/>
+        <element name="Telefone" positionX="129.61328125" positionY="-114.4765625" width="128" height="105"/>
+    </elements>
 </model>
