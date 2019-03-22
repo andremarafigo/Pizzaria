@@ -23,9 +23,8 @@ class PizzaViewModel {
         loadData()
     }
 
-    func saveData(_ sabor : Pizza) {
-        listaPizzas.append(sabor)
-          do {
+    func saveData() {
+        do {
             try contexto.save()
         } catch  {
             print("Erro ao salvar o contexto: \(error) ")

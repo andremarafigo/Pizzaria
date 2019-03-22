@@ -48,7 +48,8 @@ class CriaSaboresTableViewController: UITableViewController {
     }
     
     func addPizza(_ pizza : Pizza) {
-        sabores.saveData(pizza)
+        sabores.listaPizzas.append(pizza)
+        sabores.saveData()
         
         let cell = IndexPath(row: sabores.listaPizzas.count - 1, section: 0)
         tableView.beginUpdates()
@@ -56,17 +57,23 @@ class CriaSaboresTableViewController: UITableViewController {
         tableView.endUpdates()
     }
     
+    func editPizza(_ pizza : Pizza) {
+        let index = tableView.indexPathForSelectedRow?.row
+        sabores.listaPizzas[index!].sabor = pizza.sabor
+        sabores.listaPizzas[index!].tamanho = pizza.tamanho
+        sabores.listaPizzas[index!].valor = pizza.valor
+        sabores.saveData()
+        self.tableView.reloadData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SaboresToSabor" {
-            let parm = segue.destination as! EditarSaborViewController
-            parm.owner = self
-            //        } else if segue.identifier == "MenuToPedidos" {
-            //            let parm = segue.destination as! PedidosTableViewController
-            //            parm.telaInicial = self
-            //        }else if segue.identifier == "PedidoToSabores" {
-            //            let parm = segue.destination as! SaboresTableViewController
-            //            parm.telaInicial = self
-            //parm.operatioTypeIsAdd = true
+        let next = segue.destination as! EditarSaborViewController
+        next.owner = self
+        
+        if segue.identifier == "editarSabor" {
+            next.editarSabor = sabores.listaPizzas[(tableView.indexPathForSelectedRow?.row)!]
+        } else {
+            next.editarSabor = nil
         }
     }
 

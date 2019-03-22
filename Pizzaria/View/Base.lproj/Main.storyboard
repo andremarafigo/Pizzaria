@@ -454,7 +454,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="szn-Wm-KPp" kind="show" id="ySh-ep-hD4"/>
+                                    <segue destination="szn-Wm-KPp" kind="show" identifier="editarSabor" id="ySh-ep-hD4"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -467,7 +467,7 @@
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="E9Z-wB-UPB"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="k0u-AZ-iIP">
                             <connections>
-                                <segue destination="szn-Wm-KPp" kind="show" identifier="SaboresToSabor" id="fco-oE-AWU"/>
+                                <segue destination="szn-Wm-KPp" kind="show" identifier="criarSabor" id="fco-oE-AWU"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -568,7 +568,7 @@
         <image name="1024.png" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fco-oE-AWU"/>
+        <segue reference="ySh-ep-hD4"/>
         <segue reference="0HP-2C-Rti"/>
         <segue reference="LgY-oh-eke"/>
     </inferredMetricsTieBreakers>

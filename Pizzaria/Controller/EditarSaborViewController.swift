@@ -33,12 +33,23 @@ class EditarSaborViewController: UIViewController {
 
 
     @IBAction func btnSalvarClick(sender: AnyObject){
-        let p = Pizza(context: contexto)
-        p.sabor = txtSabor.text
-        p.tamanho = txtTamanho.text
-        p.valor = Double(txtValor.text!)!
-
-        owner?.addPizza(p)
+        //owner?.addPizza(p)
+        
+        if (editarSabor != nil) {
+            editarSabor!.sabor = txtSabor.text
+            editarSabor!.tamanho = txtTamanho.text
+            editarSabor!.valor = Double(txtValor.text!)!
+            
+            owner?.editPizza(editarSabor!)
+        }
+        else {
+            let p = Pizza(context: contexto)
+            p.sabor = txtSabor.text
+            p.tamanho = txtTamanho.text
+            p.valor = Double(txtValor.text!)!
+            
+            owner?.addPizza(p)
+        }
         
         navigationController?.popViewController(animated: true)
     }
