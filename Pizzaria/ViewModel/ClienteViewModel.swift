@@ -1,8 +1,8 @@
 //
-//  PizzaViewModel.swift
+//  ClienteViewModel.swift
 //  Pizzaria
 //
-//  Created by André Marafigo on 17/03/19.
+//  Created by André Marafigo on 21/03/19.
 //  Copyright © 2019 ALUNO. All rights reserved.
 //
 
@@ -10,20 +10,21 @@ import Foundation
 import UIKit
 import CoreData
 
-class PedidoViewModel {
+class ClienteViewModel {
+    
     private var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var file = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Pizzaria.plist")
     
-    private var listaPedidos: [Pedido] = []
-    private let requestPedido: NSFetchRequest<Pedido> = Pedido.fetchRequest()
+    private var listaClientes: [Cliente] = []
+    private let requestCliente: NSFetchRequest<Cliente> = Cliente.fetchRequest()
     
     init() {
         loadData()
     }
     
-    var pedidos : [Pedido] {
-        return listaPedidos
+    var clientes : [Cliente] {
+        return listaClientes
     }
     
     func saveData() {
@@ -37,7 +38,7 @@ class PedidoViewModel {
     func loadData() {
         do
         {
-            listaPedidos = try contexto.fetch(requestPedido)
+            listaClientes = try contexto.fetch(requestCliente)
         }
         catch
         {
@@ -45,4 +46,3 @@ class PedidoViewModel {
         }
     }
 }
-

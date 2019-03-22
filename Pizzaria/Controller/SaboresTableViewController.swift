@@ -1,16 +1,17 @@
 //
-//  PedidosTableViewController.swift
+//  SaboresTableViewController.swift
 //  Pizzaria
 //
-//  Created by André Marafigo on 17/03/19.
+//  Created by ALUNO on 20/03/19.
 //  Copyright © 2019 ALUNO. All rights reserved.
 //
 /*
 import UIKit
 
-class PedidosTableViewController: UITableViewController {
+class SaboresTableViewController: UITableViewController {
 
     //var populaBase = PopulaBase()
+    
     var telaInicial: ViewController?
     
     var selectedIndex: Int = -1
@@ -35,17 +36,20 @@ class PedidosTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return telaInicial!.listaPedidos.count
+        return telaInicial!.listaPizzas.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "listaPedidos", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "listaSabores", for: indexPath)
+
+        let teste = "\(telaInicial!.listaPizzas[indexPath.row].sabor!) - \(telaInicial!.listaPizzas[indexPath.row].tamanho!)"
         
-        cell.textLabel?.text = telaInicial!.listaPedidos[indexPath.row].cliente?.nome
+        cell.textLabel?.text = teste
 
         return cell
     }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -53,18 +57,7 @@ class PedidosTableViewController: UITableViewController {
         // Return false if you do not want the specified item to be editable.
         return true
     }
- 
-    func addPedido(_ pedido : Pedido) {
-        populaBase.listaPedidos.pedidos.append(pedido)
-        
-        let cell = IndexPath(row: populaBase.listaPedidos.pedidos.count - 1, section: 0)
-        tableView.beginUpdates()
-        tableView.insertRows(at: [cell], with: .bottom)
-        tableView.endUpdates()
-        
-        //listaPedidos.pedidos.saveData()
-        
-    }*/
+    */
 
     /*
     // Override to support editing the table view.
@@ -85,14 +78,13 @@ class PedidosTableViewController: UITableViewController {
     }
     */
 
-
     /*
     // Override to support conditional rearranging of the table view.
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
-    }*/
-
+    }
+    */
 
     /*
     // MARK: - Navigation
@@ -105,4 +97,4 @@ class PedidosTableViewController: UITableViewController {
     */
 
 }
-*/
+ */

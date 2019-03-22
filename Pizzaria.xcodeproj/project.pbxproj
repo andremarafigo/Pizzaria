@@ -15,6 +15,14 @@
 		57A42050223C735B00488B78 /* Pizzaria.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57A4204E223C735B00488B78 /* Pizzaria.xcdatamodeld */; };
 		57A42052223C735D00488B78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57A42051223C735D00488B78 /* Assets.xcassets */; };
 		57A42055223C735D00488B78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A42053223C735D00488B78 /* LaunchScreen.storyboard */; };
+		57B164D52242FD0400752EE8 /* SaboresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B164D42242FD0400752EE8 /* SaboresTableViewController.swift */; };
+		57B164D922430CB300752EE8 /* CriaSaboresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B164D822430CB300752EE8 /* CriaSaboresTableViewController.swift */; };
+		960A6D3E22443B66005FC644 /* EditarSaborViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960A6D3D22443B66005FC644 /* EditarSaborViewController.swift */; };
+		960A6D4022445776005FC644 /* PizzaViewlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960A6D3F22445776005FC644 /* PizzaViewlModel.swift */; };
+		960A6D42224462CB005FC644 /* ClienteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960A6D41224462CB005FC644 /* ClienteViewModel.swift */; };
+		960A6D4422446339005FC644 /* EnderecoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960A6D4322446339005FC644 /* EnderecoViewModel.swift */; };
+		960A6D4622446395005FC644 /* TelefoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960A6D4522446395005FC644 /* TelefoneViewModel.swift */; };
+		960A6D48224463EF005FC644 /* PizzasPedidoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960A6D47224463EF005FC644 /* PizzasPedidoViewModel.swift */; };
 		963AF7B22241D4A2008A6D29 /* 1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 963AF7B12241D4A2008A6D29 /* 1024.png */; };
 		966930D5223ECE2800B72EFD /* PedidosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966930D4223ECE2800B72EFD /* PedidosTableViewController.swift */; };
 		966930E5223EF4E400B72EFD /* PedidoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966930E4223EF4E400B72EFD /* PedidoViewModel.swift */; };
@@ -36,6 +44,14 @@
 		57A42051223C735D00488B78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57A42054223C735D00488B78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		57A42056223C735D00488B78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57B164D42242FD0400752EE8 /* SaboresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaboresTableViewController.swift; sourceTree = "<group>"; };
+		57B164D822430CB300752EE8 /* CriaSaboresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriaSaboresTableViewController.swift; sourceTree = "<group>"; };
+		960A6D3D22443B66005FC644 /* EditarSaborViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarSaborViewController.swift; sourceTree = "<group>"; };
+		960A6D3F22445776005FC644 /* PizzaViewlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaViewlModel.swift; sourceTree = "<group>"; };
+		960A6D41224462CB005FC644 /* ClienteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClienteViewModel.swift; sourceTree = "<group>"; };
+		960A6D4322446339005FC644 /* EnderecoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnderecoViewModel.swift; sourceTree = "<group>"; };
+		960A6D4522446395005FC644 /* TelefoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelefoneViewModel.swift; sourceTree = "<group>"; };
+		960A6D47224463EF005FC644 /* PizzasPedidoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzasPedidoViewModel.swift; sourceTree = "<group>"; };
 		963AF7B12241D4A2008A6D29 /* 1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1024.png; sourceTree = "<group>"; };
 		966930D4223ECE2800B72EFD /* PedidosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosTableViewController.swift; sourceTree = "<group>"; };
 		966930E4223EF4E400B72EFD /* PedidoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidoViewModel.swift; sourceTree = "<group>"; };
@@ -114,6 +130,9 @@
 				57A42047223C735B00488B78 /* AppDelegate.swift */,
 				57A42049223C735B00488B78 /* ViewController.swift */,
 				966930D4223ECE2800B72EFD /* PedidosTableViewController.swift */,
+				57B164D42242FD0400752EE8 /* SaboresTableViewController.swift */,
+				57B164D822430CB300752EE8 /* CriaSaboresTableViewController.swift */,
+				960A6D3D22443B66005FC644 /* EditarSaborViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -133,6 +152,11 @@
 			children = (
 				966930E4223EF4E400B72EFD /* PedidoViewModel.swift */,
 				57A3770522406D68005F840A /* PopulaBase.swift */,
+				960A6D3F22445776005FC644 /* PizzaViewlModel.swift */,
+				960A6D41224462CB005FC644 /* ClienteViewModel.swift */,
+				960A6D4322446339005FC644 /* EnderecoViewModel.swift */,
+				960A6D4522446395005FC644 /* TelefoneViewModel.swift */,
+				960A6D47224463EF005FC644 /* PizzasPedidoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -210,12 +234,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				966930F7223F29BB00B72EFD /* Telefone.swift in Sources */,
+				960A6D4422446339005FC644 /* EnderecoViewModel.swift in Sources */,
 				966930D5223ECE2800B72EFD /* PedidosTableViewController.swift in Sources */,
+				57B164D922430CB300752EE8 /* CriaSaboresTableViewController.swift in Sources */,
+				960A6D48224463EF005FC644 /* PizzasPedidoViewModel.swift in Sources */,
 				57A42050223C735B00488B78 /* Pizzaria.xcdatamodeld in Sources */,
+				960A6D4622446395005FC644 /* TelefoneViewModel.swift in Sources */,
 				57A4204A223C735B00488B78 /* ViewController.swift in Sources */,
+				960A6D4022445776005FC644 /* PizzaViewlModel.swift in Sources */,
 				57A3770222405D76005F840A /* PizzasPedido.swift in Sources */,
+				960A6D42224462CB005FC644 /* ClienteViewModel.swift in Sources */,
 				966930F5223F29BB00B72EFD /* Pedido.swift in Sources */,
 				966930F8223F29BB00B72EFD /* Cliente.swift in Sources */,
+				960A6D3E22443B66005FC644 /* EditarSaborViewController.swift in Sources */,
+				57B164D52242FD0400752EE8 /* SaboresTableViewController.swift in Sources */,
 				57A42048223C735B00488B78 /* AppDelegate.swift in Sources */,
 				966930F6223F29BB00B72EFD /* Pizza.swift in Sources */,
 				966930E5223EF4E400B72EFD /* PedidoViewModel.swift in Sources */,
