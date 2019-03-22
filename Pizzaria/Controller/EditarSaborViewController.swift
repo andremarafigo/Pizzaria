@@ -10,7 +10,7 @@ import UIKit
 
 class EditarSaborViewController: UIViewController {
 
-    //var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var txtSabor: UITextField!
     @IBOutlet weak var txtTamanho: UITextField!
@@ -33,7 +33,7 @@ class EditarSaborViewController: UIViewController {
 
 
     @IBAction func btnSalvarClick(sender: AnyObject){
-        let p = Pizza(context: (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
+        let p = Pizza(context: contexto)
         p.sabor = txtSabor.text
         p.tamanho = txtTamanho.text
         p.valor = Double(txtValor.text!)!

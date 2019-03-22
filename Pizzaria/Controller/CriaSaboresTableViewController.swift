@@ -10,6 +10,7 @@ import UIKit
 
 class CriaSaboresTableViewController: UITableViewController {
 
+    var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var sabores : PizzaViewModel!
     
@@ -53,6 +54,20 @@ class CriaSaboresTableViewController: UITableViewController {
         tableView.beginUpdates()
         tableView.insertRows(at: [cell], with: .bottom)
         tableView.endUpdates()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SaboresToSabor" {
+            let parm = segue.destination as! EditarSaborViewController
+            parm.owner = self
+            //        } else if segue.identifier == "MenuToPedidos" {
+            //            let parm = segue.destination as! PedidosTableViewController
+            //            parm.telaInicial = self
+            //        }else if segue.identifier == "PedidoToSabores" {
+            //            let parm = segue.destination as! SaboresTableViewController
+            //            parm.telaInicial = self
+            //parm.operatioTypeIsAdd = true
+        }
     }
 
 }
