@@ -13,14 +13,16 @@ import CoreData
 class PizzaViewModel {
     
     var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
-    //var file = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Pizzaria.plist")
-
+ 
     var listaPizzas: [Pizza] = []
     let requestPizza: NSFetchRequest<Pizza> = Pizza.fetchRequest()
     
     init() {
         loadData()
+//        listaPizzas[0].sabor = "Quatro Queijo"
+//        listaPizzas[0].tamanho = "M"
+//        listaPizzas[0].valor = 20.00
+//        saveData()
     }
 
     func saveData() {

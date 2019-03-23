@@ -8,36 +8,32 @@
 
 import UIKit
 
-class CriaSaboresTableViewController: UITableViewController {
+class PizzasTableViewController: UITableViewController {
 
     var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    var sabores : PizzaViewModel!
+    var pizzas : PizzaViewModel!
     
-    var selectedIndex: Int = -1
+    //var selectedIndex: Int = -1
 
     override func viewDidLoad() {
         navigationItem.rightBarButtonItems?.append(editButtonItem)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return sabores.listaPizzas.count
+        return pizzas.listaPizzas.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "todosSabores", for: indexPath)
-
-//        let sabor = "\(sabores.listaPizzas[indexPath.row].sabor!) - \(sabores.listaPizzas[indexPath.row].tamanho!)"
         
-        cell.textLabel?.text = sabores.listaPizzas[indexPath.row].sabor!
-        cell.detailTextLabel?.text = sabores.listaPizzas[indexPath.row].tamanho!
+        cell.textLabel?.text = pizzas.listaPizzas[indexPath.row].sabor!
+        cell.detailTextLabel?.text = pizzas.listaPizzas[indexPath.row].tamanho!
         
 
         return cell
@@ -48,10 +44,10 @@ class CriaSaboresTableViewController: UITableViewController {
     }
     
     func addPizza(_ pizza : Pizza) {
-        sabores.listaPizzas.append(pizza)
-        sabores.saveData()
+        pizzas.listaPizzas.append(pizza)
+        pizzas.saveData()
         
-        let cell = IndexPath(row: sabores.listaPizzas.count - 1, section: 0)
+        let cell = IndexPath(row: pizzas.listaPizzas.count - 1, section: 0)
         tableView.beginUpdates()
         tableView.insertRows(at: [cell], with: .bottom)
         tableView.endUpdates()
@@ -59,21 +55,21 @@ class CriaSaboresTableViewController: UITableViewController {
     
     func editPizza(_ pizza : Pizza) {
         let index = tableView.indexPathForSelectedRow?.row
-        sabores.listaPizzas[index!].sabor = pizza.sabor
-        sabores.listaPizzas[index!].tamanho = pizza.tamanho
-        sabores.listaPizzas[index!].valor = pizza.valor
-        sabores.saveData()
+        pizzas.listaPizzas[index!].sabor = pizza.sabor
+        pizzas.listaPizzas[index!].tamanho = pizza.tamanho
+        pizzas.listaPizzas[index!].valor = pizza.valor
+        pizzas.saveData()
         self.tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let next = segue.destination as! EditarSaborViewController
+        let next = segue.destination as! EditarPizzaViewController
         next.owner = self
         
         if segue.identifier == "editarSabor" {
-            next.editarSabor = sabores.listaPizzas[(tableView.indexPathForSelectedRow?.row)!]
+            next.editarPizza = pizzas.listaPizzas[(tableView.indexPathForSelectedRow?.row)!]
         } else {
-            next.editarSabor = nil
+            next.editarPizza = nil
         }
     }
 

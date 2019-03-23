@@ -12,19 +12,16 @@ import CoreData
 
 class ClienteViewModel {
     
-    private var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    var file = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Pizzaria.plist")
-    
-    private var listaClientes: [Cliente] = []
-    private let requestCliente: NSFetchRequest<Cliente> = Cliente.fetchRequest()
+    var listaClientes: [Cliente] = []
+    let requestCliente: NSFetchRequest<Cliente> = Cliente.fetchRequest()
     
     init() {
         loadData()
-    }
-    
-    var clientes : [Cliente] {
-        return listaClientes
+//        listaClientes[0].cpf = "111.111.111-11"
+//        listaClientes[0].nome = "André Marafigo"
+//        saveData()
     }
     
     func saveData() {
@@ -33,6 +30,7 @@ class ClienteViewModel {
         } catch  {
             print("Erro ao salvar o contexto: \(error) ")
         }
+        loadData()
     }
     
     func loadData() {

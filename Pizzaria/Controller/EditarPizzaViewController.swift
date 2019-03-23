@@ -8,22 +8,22 @@
 
 import UIKit
 
-class EditarSaborViewController: UIViewController {
+class EditarPizzaViewController: UIViewController {
 
     var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+    var owner : PizzasTableViewController?
+    var editarPizza : Pizza?
     
     @IBOutlet weak var txtSabor: UITextField!
     @IBOutlet weak var txtTamanho: UITextField!
     @IBOutlet weak var txtValor: UITextField!
 
-    var owner : CriaSaboresTableViewController?
-    var editarSabor : Pizza?
-
     override func viewWillAppear(_ animated: Bool) {
-        if editarSabor != nil {
-            txtSabor.text = editarSabor?.sabor
-            txtTamanho.text = editarSabor?.tamanho
-            txtValor.text = String(editarSabor!.valor)
+        if editarPizza != nil {
+            txtSabor.text = editarPizza?.sabor
+            txtTamanho.text = editarPizza?.tamanho
+            txtValor.text = String(editarPizza!.valor)
         }
     }
 
@@ -33,14 +33,13 @@ class EditarSaborViewController: UIViewController {
 
 
     @IBAction func btnSalvarClick(sender: AnyObject){
-        //owner?.addPizza(p)
         
-        if (editarSabor != nil) {
-            editarSabor!.sabor = txtSabor.text
-            editarSabor!.tamanho = txtTamanho.text
-            editarSabor!.valor = Double(txtValor.text!)!
+        if (editarPizza != nil) {
+            editarPizza!.sabor = txtSabor.text
+            editarPizza!.tamanho = txtTamanho.text
+            editarPizza!.valor = Double(txtValor.text!)!
             
-            owner?.editPizza(editarSabor!)
+            owner?.editPizza(editarPizza!)
         }
         else {
             let p = Pizza(context: contexto)

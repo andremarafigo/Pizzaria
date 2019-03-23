@@ -11,19 +11,13 @@ import UIKit
 import CoreData
 
 class PedidoViewModel {
-    private var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
-    var file = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Pizzaria.plist")
-    
-    private var listaPedidos: [Pedido] = []
-    private let requestPedido: NSFetchRequest<Pedido> = Pedido.fetchRequest()
+    var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+    var listaPedidos: [Pedido] = []
+    let requestPedido: NSFetchRequest<Pedido> = Pedido.fetchRequest()
     
     init() {
         loadData()
-    }
-    
-    var pedidos : [Pedido] {
-        return listaPedidos
     }
     
     func saveData() {

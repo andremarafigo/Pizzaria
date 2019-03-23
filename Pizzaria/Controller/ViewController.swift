@@ -33,14 +33,14 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MenuToSabores" {
-            let parm = segue.destination as! CriaSaboresTableViewController
-            parm.sabores = pizza
-//        } else if segue.identifier == "MenuToPedidos" {
-//            let parm = segue.destination as! PedidosTableViewController
-//            parm.telaInicial = self
-//        }else if segue.identifier == "PedidoToSabores" {
-//            let parm = segue.destination as! SaboresTableViewController
-//            parm.telaInicial = self
+            let parm = segue.destination as! PizzasTableViewController
+            parm.pizzas = pizza
+        } else if segue.identifier == "MenuToClientes" {
+            let parm = segue.destination as! ClientesTableViewController
+            parm.clientes = cliente
+        }else if segue.identifier == "MenuToPedidos" {
+            let parm = segue.destination as! PedidosTableViewController
+            parm.pedidos = pedido
             //parm.operatioTypeIsAdd = true
         }
     }

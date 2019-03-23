@@ -12,19 +12,21 @@ import CoreData
 
 class EnderecoViewModel {
     
-    private var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+    var listaEnderecos: [Endereco] = []
+    let requestEndereco: NSFetchRequest<Endereco> = Endereco.fetchRequest()
+
+    var listaClientes: [Cliente] = []
+    let requestCliente: NSFetchRequest<Cliente> = Cliente.fetchRequest()
     
-    var file = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Pizzaria.plist")
-
-    private var listaEnderecos: [Endereco] = []
-    private let requestEndereco: NSFetchRequest<Endereco> = Endereco.fetchRequest()
-
     init() {
         loadData()
-    }
-    
-    var enderecos : [Endereco] {
-        return listaEnderecos
+//        listaEnderecos[0].cliente = listaClientes[0]
+//        listaEnderecos[0].cep = "111111-111"
+//        listaEnderecos[0].nome_rua = "Rua 01"
+//        listaEnderecos[0].numero = 1
+//        saveData()
     }
     
     func saveData() {
@@ -39,6 +41,7 @@ class EnderecoViewModel {
         do
         {
             listaEnderecos = try contexto.fetch(requestEndereco)
+            listaClientes = try contexto.fetch(requestCliente)
         }
         catch
         {
