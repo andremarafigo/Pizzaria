@@ -245,22 +245,79 @@
         <!--Endereço-->
         <scene sceneID="yyS-Ag-Ofs">
             <objects>
-                <viewController id="uVf-iW-hpe" sceneMemberID="viewController">
+                <viewController id="uVf-iW-hpe" customClass="EditarEnderecoViewController" customModule="Pizzaria" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eMX-7K-WIK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rua:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPB-BX-XC6">
+                                <rect key="frame" x="170" y="153" width="34" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Número:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T98-DO-wVV">
+                                <rect key="frame" x="154" y="220" width="66" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CEP:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whQ-O3-1Uw">
+                                <rect key="frame" x="169" y="86" width="37" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="00000-000" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dej-Uc-tmh">
+                                <rect key="frame" x="139" y="115" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tst-Zs-aaZ">
+                                <rect key="frame" x="139" y="249" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome da Rua" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mHh-kC-Wnu">
+                                <rect key="frame" x="90" y="182" width="194" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="jmv-er-vmf"/>
                     </view>
                     <navigationItem key="navigationItem" title="Endereço" id="8KS-om-dik">
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="r5r-Vl-5dZ"/>
-                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="6QD-0j-tFc"/>
-                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="oat-pc-I4Z"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="6QD-0j-tFc">
+                            <connections>
+                                <action selector="btnCancelarClick:" destination="uVf-iW-hpe" id="wyn-vQ-Ub1"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="oat-pc-I4Z">
+                            <connections>
+                                <action selector="btnSalvarClick:" destination="uVf-iW-hpe" id="KNx-Je-zOz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="txtCEP" destination="dej-Uc-tmh" id="0Zy-Xd-0Zt"/>
+                        <outlet property="txtNumero" destination="tst-Zs-aaZ" id="frz-KZ-3hd"/>
+                        <outlet property="txtRua" destination="mHh-kC-Wnu" id="NOT-lL-q9v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m2G-i7-YMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3745" y="724"/>
+            <point key="canvasLocation" x="-3746.4000000000001" y="723.68815592203907"/>
         </scene>
         <!--Telefone-->
         <scene sceneID="MO2-Sd-ihw">
@@ -330,13 +387,13 @@
         <!--Endereços-->
         <scene sceneID="LH2-IU-pcw">
             <objects>
-                <tableViewController id="vpD-eO-al3" sceneMemberID="viewController">
+                <tableViewController id="vpD-eO-al3" customClass="EnderecosTableViewController" customModule="Pizzaria" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NW3-Fl-FeC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="8Op-Es-Ts8" detailTextLabel="B7r-YO-zzW" style="IBUITableViewCellStyleValue1" id="VeT-hz-lW8">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="listaEnderecos" textLabel="8Op-Es-Ts8" detailTextLabel="B7r-YO-zzW" style="IBUITableViewCellStyleValue1" id="VeT-hz-lW8">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VeT-hz-lW8" id="QJh-9b-YYR">
@@ -855,8 +912,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="ySh-ep-hD4"/>
         <segue reference="0HP-2C-Rti"/>
-        <segue reference="LgY-oh-eke"/>
+        <segue reference="JNj-9C-6S2"/>
         <segue reference="mry-s2-80t"/>
-        <segue reference="UjD-JO-Acg"/>
+        <segue reference="0TH-TN-Nl8"/>
     </inferredMetricsTieBreakers>
 </document>

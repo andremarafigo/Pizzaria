@@ -17,11 +17,36 @@ class ClienteViewModel {
     var listaClientes: [Cliente] = []
     let requestCliente: NSFetchRequest<Cliente> = Cliente.fetchRequest()
     
+    var listaEnderecos: [Endereco] = []
+    let requestEndereco: NSFetchRequest<Endereco> = Endereco.fetchRequest()
+    
+    var listaTelefones: [Telefone] = []
+    let requestTelefone: NSFetchRequest<Telefone> = Telefone.fetchRequest()
+    
     init() {
         loadData()
-//        listaClientes[0].cpf = "111.111.111-11"
-//        listaClientes[0].nome = "André Marafigo"
-//        saveData()
+        if listaClientes.count == 0 {
+            let c = Cliente(context: contexto)
+            c.nome = "André Marafigo"
+            c.cpf = "111.111.111-11"
+            listaClientes.append(c)
+            saveData()
+            
+            let e = Endereco(context: contexto)
+            e.cliente = listaClientes[0]
+            e.cep = "111111-111"
+            e.nome_rua = "Rua 01"
+            e.numero = 1
+            listaEnderecos.append(e)
+            saveData()
+            
+            let t = Telefone(context: contexto)
+            t.cliente = listaClientes[0]
+            t.ddi = 55
+            t.ddd = 41
+            t.numero = "99999-0001"
+            saveData()
+        }
     }
     
     func saveData() {
@@ -37,6 +62,8 @@ class ClienteViewModel {
         do
         {
             listaClientes = try contexto.fetch(requestCliente)
+            listaEnderecos = try contexto.fetch(requestEndereco)
+            listaTelefones = try contexto.fetch(requestTelefone)
         }
         catch
         {

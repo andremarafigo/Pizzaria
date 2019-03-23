@@ -32,7 +32,6 @@ class ClientesTableViewController: UITableViewController {
         cell.textLabel?.text = clientes.listaClientes[indexPath.row].nome!
         cell.detailTextLabel?.text = clientes.listaClientes[indexPath.row].cpf!
         
-        
         return cell
     }
     
@@ -58,12 +57,46 @@ class ClientesTableViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
+    func editEndereco(_ enderecos : [Endereco]) {
+        clientes.listaEnderecos = enderecos
+//        let index = tableView.indexPathForSelectedRow?.row
+//        clientes.listaEnderecos[index!].cliente = endereco.cliente
+//        clientes.listaEnderecos[index!].cep = endereco.cep
+//        clientes.listaEnderecos[index!].nome_rua = endereco.nome_rua
+//        clientes.listaEnderecos[index!].numero = endereco.numero
+        clientes.saveData()
+        self.tableView.reloadData()
+    }
+    
+    func editTelefone(_ telefones : [Telefone]) {
+        clientes.listaTelefones = telefones
+//        let index = tableView.indexPathForSelectedRow?.row
+//        clientes.listaTelefones[index!].cliente = telefone.cliente
+//        clientes.listaTelefones[index!].ddi = telefone.ddi
+//        clientes.listaTelefones[index!].ddd = telefone.ddd
+//        clientes.listaTelefones[index!].numero = telefone.numero
+        clientes.saveData()
+        self.tableView.reloadData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let next = segue.destination as! EditarClienteViewController
         next.owner = self
         
         if segue.identifier == "editarCliente" {
             next.editarCliente = clientes.listaClientes[(tableView.indexPathForSelectedRow?.row)!]
+            //next.editarEnderecos = clientes.listaEnderecos
+            //next.editarTelefones = clientes.listaTelefones
+//            for e in clientes.listaEnderecos {
+//                if e.cliente == next.editarCliente {
+//                    next.editarEndereco = e
+//                }
+//            }
+//            for t in clientes.listaTelefones {
+//                if t.cliente == next.editarCliente {
+//                    next.editarTelefone = t
+//                }
+//            }
         } else {
             next.editarCliente = nil
         }

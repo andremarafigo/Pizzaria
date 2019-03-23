@@ -22,11 +22,15 @@ class EnderecoViewModel {
     
     init() {
         loadData()
-//        listaEnderecos[0].cliente = listaClientes[0]
-//        listaEnderecos[0].cep = "111111-111"
-//        listaEnderecos[0].nome_rua = "Rua 01"
-//        listaEnderecos[0].numero = 1
-//        saveData()
+        if listaClientes.count == 0 {
+            let e = Endereco(context: contexto)
+            e.cliente = listaClientes[0]
+            e.cep = "111111-111"
+            e.nome_rua = "Rua 01"
+            e.numero = 1
+            listaEnderecos.append(e)
+            saveData()
+        }
     }
     
     func saveData() {

@@ -12,21 +12,21 @@ import CoreData
 class ViewController: UIViewController {
     
     var cliente : ClienteViewModel!
-    var endereco : EnderecoViewModel!
-    var telefone : TelefoneViewModel!
+    //var endereco : EnderecoViewModel!
+    //var telefone : TelefoneViewModel!
     var pizza : PizzaViewModel!
     var pedido : PedidoViewModel!
-    var pizzasPedidos : PizzasPedidoViewModel!
+    //var pizzasPedidos : PizzasPedidoViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         cliente = ClienteViewModel()
-        endereco = EnderecoViewModel()
-        telefone = TelefoneViewModel()
+        //endereco = EnderecoViewModel()
+        //telefone = TelefoneViewModel()
         pizza = PizzaViewModel()
         pedido = PedidoViewModel()
-        pizzasPedidos = PizzasPedidoViewModel()
+        //pizzasPedidos = PizzasPedidoViewModel()
     }
 
 

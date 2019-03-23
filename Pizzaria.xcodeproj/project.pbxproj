@@ -34,6 +34,8 @@
 		966930F9223F29BB00B72EFD /* Endereco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966930F4223F29BB00B72EFD /* Endereco.swift */; };
 		96F5D0F72245D48100B7E6F8 /* ClientesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5D0F62245D48100B7E6F8 /* ClientesTableViewController.swift */; };
 		96F5D0F92245DC5100B7E6F8 /* EditarClienteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5D0F82245DC5100B7E6F8 /* EditarClienteViewController.swift */; };
+		96F5D0FB2246705400B7E6F8 /* EnderecosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5D0FA2246705400B7E6F8 /* EnderecosTableViewController.swift */; };
+		96F5D0FD224676AD00B7E6F8 /* EditarEnderecoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5D0FC224676AD00B7E6F8 /* EditarEnderecoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +68,8 @@
 		966930F4223F29BB00B72EFD /* Endereco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endereco.swift; sourceTree = "<group>"; };
 		96F5D0F62245D48100B7E6F8 /* ClientesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientesTableViewController.swift; sourceTree = "<group>"; };
 		96F5D0F82245DC5100B7E6F8 /* EditarClienteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarClienteViewController.swift; sourceTree = "<group>"; };
+		96F5D0FA2246705400B7E6F8 /* EnderecosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnderecosTableViewController.swift; sourceTree = "<group>"; };
+		96F5D0FC224676AD00B7E6F8 /* EditarEnderecoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarEnderecoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +146,8 @@
 				57F14A8F2245B1910037D679 /* SiteViewController.swift */,
 				96F5D0F62245D48100B7E6F8 /* ClientesTableViewController.swift */,
 				96F5D0F82245DC5100B7E6F8 /* EditarClienteViewController.swift */,
+				96F5D0FA2246705400B7E6F8 /* EnderecosTableViewController.swift */,
+				96F5D0FC224676AD00B7E6F8 /* EditarEnderecoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -259,9 +265,11 @@
 				966930F8223F29BB00B72EFD /* Cliente.swift in Sources */,
 				960A6D3E22443B66005FC644 /* EditarPizzaViewController.swift in Sources */,
 				57B164D52242FD0400752EE8 /* SaboresTableViewController.swift in Sources */,
+				96F5D0FD224676AD00B7E6F8 /* EditarEnderecoViewController.swift in Sources */,
 				96F5D0F72245D48100B7E6F8 /* ClientesTableViewController.swift in Sources */,
 				57A42048223C735B00488B78 /* AppDelegate.swift in Sources */,
 				966930F6223F29BB00B72EFD /* Pizza.swift in Sources */,
+				96F5D0FB2246705400B7E6F8 /* EnderecosTableViewController.swift in Sources */,
 				966930E5223EF4E400B72EFD /* PedidoViewModel.swift in Sources */,
 				966930F9223F29BB00B72EFD /* Endereco.swift in Sources */,
 				57A3770622406D68005F840A /* PopulaBase.swift in Sources */,

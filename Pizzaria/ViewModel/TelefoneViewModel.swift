@@ -14,8 +14,6 @@ class TelefoneViewModel {
     
     var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    var file = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Pizzaria.plist")
-    
     var listaTelefones: [Telefone] = []
     let requestTelefone: NSFetchRequest<Telefone> = Telefone.fetchRequest()
     
