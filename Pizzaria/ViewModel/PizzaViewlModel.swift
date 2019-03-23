@@ -14,7 +14,7 @@ class PizzaViewModel {
     
     var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    var file = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Pizzaria.plist")
+    //var file = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Pizzaria.plist")
 
     var listaPizzas: [Pizza] = []
     let requestPizza: NSFetchRequest<Pizza> = Pizza.fetchRequest()

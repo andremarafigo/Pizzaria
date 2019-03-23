@@ -26,20 +26,34 @@
             </objects>
             <point key="canvasLocation" x="-1082" y="-823"/>
         </scene>
-        <!--View Controller-->
+        <!--Site View Controller-->
         <scene sceneID="AgI-05-P1z">
             <objects>
-                <viewController id="Ue9-0N-VCg" sceneMemberID="viewController">
+                <viewController id="Ue9-0N-VCg" customClass="SiteViewController" customModule="Pizzaria" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kZt-iE-XLK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CP4-dN-fKg">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="TJH-B4-AJk"/>
                     </view>
+                    <connections>
+                        <outlet property="mSobre" destination="CP4-dN-fKg" id="N5C-wa-upz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GcS-nM-eTC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2033" y="-61"/>
+            <point key="canvasLocation" x="-2034.4000000000001" y="-61.619190404797607"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -52,16 +66,6 @@
                             <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1024.png" translatesAutoresizingMaskIntoConstraints="NO" id="UMm-PI-F9F">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IPizza" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqP-t4-UKg">
-                                <rect key="frame" x="0.0" y="64" width="375" height="102"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="shadowColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <size key="shadowOffset" width="0.0" height="0.0"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKv-BN-vNj">
                                 <rect key="frame" x="0.0" y="236" width="375" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -92,12 +96,12 @@
                                 <rect key="frame" x="0.0" y="607" width="375" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Sobre">
+                                <state key="normal" title="Inidicações">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ue9-0N-VCg" kind="show" id="KeT-Zl-Ukc"/>
+                                    <segue destination="Ue9-0N-VCg" kind="show" id="gWx-uw-AEg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bz1-qI-Kdl">
@@ -113,31 +117,52 @@
                                     <segue destination="ouz-Bn-84l" kind="show" identifier="MenuToPedidos" id="3qC-Y4-d0A"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mmO-Pf-X9P" userLabel="PequenaView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IPizza" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqP-t4-UKg">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="shadowColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="IqP-t4-UKg" firstAttribute="top" secondItem="mmO-Pf-X9P" secondAttribute="top" id="AY3-ML-eij"/>
+                                    <constraint firstAttribute="bottom" secondItem="IqP-t4-UKg" secondAttribute="bottom" id="JVa-cG-LdF"/>
+                                    <constraint firstAttribute="trailing" secondItem="IqP-t4-UKg" secondAttribute="trailing" id="PiV-5w-p3N"/>
+                                    <constraint firstItem="IqP-t4-UKg" firstAttribute="leading" secondItem="mmO-Pf-X9P" secondAttribute="leading" id="qdE-dA-PuX"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="NKv-BN-vNj" firstAttribute="top" secondItem="Bz1-qI-Kdl" secondAttribute="bottom" constant="10" id="1mq-nt-DQg"/>
                             <constraint firstAttribute="trailing" secondItem="NKv-BN-vNj" secondAttribute="trailing" id="38t-qj-Ohc"/>
-                            <constraint firstItem="NKv-BN-vNj" firstAttribute="top" secondItem="Bz1-qI-Kdl" secondAttribute="bottom" constant="10" id="801-pE-DOl"/>
                             <constraint firstItem="NKv-BN-vNj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8Mm-G2-Vr9"/>
                             <constraint firstAttribute="bottom" secondItem="UMm-PI-F9F" secondAttribute="bottom" id="BgS-Ca-Cct"/>
                             <constraint firstItem="UMm-PI-F9F" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Fqh-iV-FWa"/>
-                            <constraint firstAttribute="trailing" secondItem="IqP-t4-UKg" secondAttribute="trailing" id="HVA-4w-nFe"/>
+                            <constraint firstItem="Bz1-qI-Kdl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Haz-aR-5uQ"/>
                             <constraint firstItem="655-Ih-Q6y" firstAttribute="top" secondItem="NKv-BN-vNj" secondAttribute="bottom" constant="10" id="K9A-ya-bKa"/>
-                            <constraint firstItem="IqP-t4-UKg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="RFM-yK-Xvb"/>
                             <constraint firstItem="655-Ih-Q6y" firstAttribute="top" secondItem="NKv-BN-vNj" secondAttribute="bottom" constant="10" id="RGm-hB-zlN"/>
                             <constraint firstItem="a4Q-ff-6HG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Skz-g4-7HT"/>
-                            <constraint firstItem="NKv-BN-vNj" firstAttribute="top" secondItem="Bz1-qI-Kdl" secondAttribute="bottom" constant="10" id="T6I-xd-ph5"/>
+                            <constraint firstItem="mmO-Pf-X9P" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SuM-pN-DWi"/>
                             <constraint firstAttribute="trailing" secondItem="655-Ih-Q6y" secondAttribute="trailing" id="TJV-nT-CRA"/>
-                            <constraint firstItem="Bz1-qI-Kdl" firstAttribute="top" secondItem="IqP-t4-UKg" secondAttribute="bottom" constant="30" id="W3N-eT-tCk"/>
+                            <constraint firstItem="mmO-Pf-X9P" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bAW-iR-aLD"/>
+                            <constraint firstItem="Bz1-qI-Kdl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="btt-8v-bSW"/>
                             <constraint firstItem="UMm-PI-F9F" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="d1L-0p-hTo"/>
-                            <constraint firstItem="IqP-t4-UKg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jfY-PD-U0G"/>
+                            <constraint firstItem="Bz1-qI-Kdl" firstAttribute="top" secondItem="mmO-Pf-X9P" secondAttribute="bottom" constant="12" id="fZu-3Y-LsM"/>
+                            <constraint firstItem="mmO-Pf-X9P" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.18" id="fgm-M2-bzF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mmO-Pf-X9P" secondAttribute="trailing" id="hZl-cV-lQu"/>
                             <constraint firstAttribute="trailing" secondItem="UMm-PI-F9F" secondAttribute="trailing" id="jws-VQ-Zbc"/>
                             <constraint firstAttribute="bottom" secondItem="a4Q-ff-6HG" secondAttribute="bottom" constant="30" id="nQB-8U-8RH"/>
                             <constraint firstItem="655-Ih-Q6y" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pNC-BA-onh"/>
-                            <constraint firstAttribute="trailing" secondItem="Bz1-qI-Kdl" secondAttribute="trailing" id="r5H-vV-AGi"/>
                             <constraint firstAttribute="trailing" secondItem="a4Q-ff-6HG" secondAttribute="trailing" id="rOu-ZC-SMN"/>
-                            <constraint firstItem="Bz1-qI-Kdl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="s3m-CI-U6o"/>
-                            <constraint firstItem="Bz1-qI-Kdl" firstAttribute="top" secondItem="IqP-t4-UKg" secondAttribute="bottom" constant="30" id="ulw-qC-F9e"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

@@ -17,6 +17,7 @@
 		57A42055223C735D00488B78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57A42053223C735D00488B78 /* LaunchScreen.storyboard */; };
 		57B164D52242FD0400752EE8 /* SaboresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B164D42242FD0400752EE8 /* SaboresTableViewController.swift */; };
 		57B164D922430CB300752EE8 /* CriaSaboresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B164D822430CB300752EE8 /* CriaSaboresTableViewController.swift */; };
+		57F14A902245B1910037D679 /* SiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F14A8F2245B1910037D679 /* SiteViewController.swift */; };
 		960A6D3E22443B66005FC644 /* EditarSaborViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960A6D3D22443B66005FC644 /* EditarSaborViewController.swift */; };
 		960A6D4022445776005FC644 /* PizzaViewlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960A6D3F22445776005FC644 /* PizzaViewlModel.swift */; };
 		960A6D42224462CB005FC644 /* ClienteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960A6D41224462CB005FC644 /* ClienteViewModel.swift */; };
@@ -46,6 +47,7 @@
 		57A42056223C735D00488B78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57B164D42242FD0400752EE8 /* SaboresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaboresTableViewController.swift; sourceTree = "<group>"; };
 		57B164D822430CB300752EE8 /* CriaSaboresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriaSaboresTableViewController.swift; sourceTree = "<group>"; };
+		57F14A8F2245B1910037D679 /* SiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteViewController.swift; sourceTree = "<group>"; };
 		960A6D3D22443B66005FC644 /* EditarSaborViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarSaborViewController.swift; sourceTree = "<group>"; };
 		960A6D3F22445776005FC644 /* PizzaViewlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaViewlModel.swift; sourceTree = "<group>"; };
 		960A6D41224462CB005FC644 /* ClienteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClienteViewModel.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				57B164D42242FD0400752EE8 /* SaboresTableViewController.swift */,
 				57B164D822430CB300752EE8 /* CriaSaboresTableViewController.swift */,
 				960A6D3D22443B66005FC644 /* EditarSaborViewController.swift */,
+				57F14A8F2245B1910037D679 /* SiteViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				960A6D4022445776005FC644 /* PizzaViewlModel.swift in Sources */,
 				57A3770222405D76005F840A /* PizzasPedido.swift in Sources */,
 				960A6D42224462CB005FC644 /* ClienteViewModel.swift in Sources */,
+				57F14A902245B1910037D679 /* SiteViewController.swift in Sources */,
 				966930F5223F29BB00B72EFD /* Pedido.swift in Sources */,
 				966930F8223F29BB00B72EFD /* Cliente.swift in Sources */,
 				960A6D3E22443B66005FC644 /* EditarSaborViewController.swift in Sources */,
