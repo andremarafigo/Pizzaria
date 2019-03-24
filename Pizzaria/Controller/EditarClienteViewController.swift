@@ -25,6 +25,8 @@ class EditarClienteViewController: UIViewController {
     @IBOutlet weak var lblEndereco: UILabel!
     @IBOutlet weak var lblTelefone: UILabel!
 
+    @IBOutlet weak var lblMsg: UILabel!
+    
     @IBOutlet weak var btnEndereco: UIButton!
     @IBOutlet weak var btnTelefone: UIButton!
     
@@ -32,6 +34,7 @@ class EditarClienteViewController: UIViewController {
         if editarCliente != nil {
             txtNome.text = editarCliente?.nome
             txtCPF.text = editarCliente?.cpf
+            lblMsg.text = ""
             btnEndereco.isEnabled = true
             btnTelefone.isEnabled = true
             lblEndereco.text = String(editarCliente!.enderecos!.count)
@@ -44,9 +47,6 @@ class EditarClienteViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func btnSalvar2(_ sender: AnyObject) {
-        btnSalvarClick(sender)
-    }
     
     @IBAction func btnSalvarClick(_ sender: AnyObject) {
         if (editarCliente != nil) {
@@ -72,27 +72,39 @@ class EditarClienteViewController: UIViewController {
                 n += 1
             }
             
-            owner?.editCliente(editarCliente!)
-//            owner?.editEndereco(editarEnderecos!)
-//            owner?.editTelefone(editarTelefones!)
+            var x = 0
+            while x == 0 {
+                if txtNome.text != "" && txtCPF.text != ""{
+                    owner?.editCliente(editarCliente!)
+                    navigationController?.popViewController(animated: true)
+                    x = 1
+                }else{
+                    lblMsg.text = "Nome e CPF são Obrigatórios!"
+                    break
+                }
+            }
         }
         else {
             let c = Cliente(context: contexto)
-            //let e = Endereco(context: contexto)
-            //let t = Telefone(context: contexto)
             
             c.nome = txtNome.text
             c.cpf = txtCPF.text
             
-            
-            
-            owner?.addCliente(c)
+            var x = 0
+            while x == 0 {
+                if txtNome.text != "" && txtCPF.text != ""{
+                    owner?.addCliente(c)
+                    btnEndereco.isEnabled = true
+                    btnTelefone.isEnabled = true
+                    lblMsg.text = ""
+                    navigationController?.popViewController(animated: true)
+                    x = 1
+                }else{
+                    lblMsg.text = "Nome e CPF são Obrigatórios!"
+                    break
+                }
+            }
         }
-        
-        btnEndereco.isEnabled = true
-        btnTelefone.isEnabled = true
-        
-        navigationController?.popViewController(animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -119,5 +131,4 @@ class EditarClienteViewController: UIViewController {
             }
         }
     }
-    
 }

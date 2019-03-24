@@ -18,7 +18,8 @@ class EditarPizzaViewController: UIViewController {
     @IBOutlet weak var txtSabor: UITextField!
     @IBOutlet weak var txtTamanho: UITextField!
     @IBOutlet weak var txtValor: UITextField!
-
+    @IBOutlet weak var lblMsg: UILabel!
+    
     override func viewWillAppear(_ animated: Bool) {
         if editarPizza != nil {
             txtSabor.text = editarPizza?.sabor
@@ -39,17 +40,37 @@ class EditarPizzaViewController: UIViewController {
             editarPizza!.tamanho = txtTamanho.text
             editarPizza!.valor = Double(txtValor.text!)!
             
-            owner?.editPizza(editarPizza!)
+            var x = 0
+            while x == 0 {
+                if txtSabor.text != "" && txtTamanho.text != "" && txtValor.text != ""{
+                    owner?.editPizza(editarPizza!)
+                    navigationController?.popViewController(animated: true)
+                    x = 1
+                }else{
+                    lblMsg.text = "Todos os Campos São Obrigatórios!"
+                    break
+                }
+            }
         }
         else {
             let p = Pizza(context: contexto)
+            
             p.sabor = txtSabor.text
             p.tamanho = txtTamanho.text
             p.valor = Double(txtValor.text!)!
             
-            owner?.addPizza(p)
+            var x = 0
+            while x == 0 {
+                if txtSabor.text != "" && txtTamanho.text != "" && txtValor.text != ""{
+                    owner?.addPizza(p)
+                    lblMsg.text = ""
+                    navigationController?.popViewController(animated: true)
+                    x = 1
+                }else{
+                    lblMsg.text = "Todos os Campos São Obrigatórios!"
+                    break
+                }
+            }
         }
-        
-        navigationController?.popViewController(animated: true)
     }
 }

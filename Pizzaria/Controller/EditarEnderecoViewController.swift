@@ -19,12 +19,14 @@ class EditarEnderecoViewController: UIViewController {
     @IBOutlet weak var txtCEP: UITextField!
     @IBOutlet weak var txtRua: UITextField!
     @IBOutlet weak var txtNumero: UITextField!
+    @IBOutlet weak var lblMsg: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         if editarEndereco != nil {
             txtCEP.text = editarEndereco?.cep
             txtRua.text = editarEndereco?.nome_rua
             txtNumero.text = String(editarEndereco!.numero)
+            lblMsg.text = ""
         }
     }
     
@@ -37,8 +39,8 @@ class EditarEnderecoViewController: UIViewController {
             var n = 0
             let endereco = editarEndereco
             editarEndereco!.cep = txtCEP.text
-            editarEndereco!.nome_rua = txtRua.text
             editarEndereco!.numero = Int16(txtNumero.text!)!
+            
             
             for e in (owner?.owner?.owner?.clientes.listaEnderecos)! {
                 if e == endereco {
@@ -46,7 +48,18 @@ class EditarEnderecoViewController: UIViewController {
                 }
                 n += 1
             }
-            owner?.editEndereco(editarEndereco!)
+            
+            var x = 0
+            while x == 0 {
+                if endereco!.cliente != nil && txtCEP.text != "" && txtRua.text != "" && txtNumero.text != ""{
+                    owner?.editEndereco(editarEndereco!)
+                    navigationController?.popViewController(animated: true)
+                    x = 1
+                }else{
+                    lblMsg.text = "Todos os Campos São Obrigatórios!"
+                    break
+                }
+            }
         }
         else {
             let e = Endereco(context: contexto)
@@ -55,10 +68,19 @@ class EditarEnderecoViewController: UIViewController {
             e.cep = txtCEP.text
             e.nome_rua = txtRua.text
             e.numero = Int16(txtNumero.text!)!
-            
-            owner?.addEndereco(e)
+
+            var x = 0
+            while x == 0 {
+                if e.cliente != nil && txtCEP.text != "" && txtRua.text != "" && txtNumero.text != ""{
+                    owner?.addEndereco(e)
+                    lblMsg.text = ""
+                    navigationController?.popViewController(animated: true)
+                    x = 1
+                }else{
+                    lblMsg.text = "Todos os Campos São Obrigatórios!"
+                    break
+                }
+            }
         }
-        
-        navigationController?.popViewController(animated: true)
     }
 }

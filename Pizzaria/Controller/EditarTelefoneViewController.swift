@@ -19,6 +19,7 @@ class EditarTelefoneViewController: UIViewController {
     @IBOutlet weak var txtDDI: UITextField!
     @IBOutlet weak var txtDDD: UITextField!
     @IBOutlet weak var txtNumero: UITextField!
+    @IBOutlet weak var lblMsg: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         if editarTelefone != nil {
@@ -44,7 +45,18 @@ class EditarTelefoneViewController: UIViewController {
                 }
                 n += 1
             }
-            owner?.editTelefone(editarTelefone!)
+            
+            var x = 0
+            while x == 0 {
+                if telefone!.cliente != nil && txtDDI.text != "" && txtDDD.text != "" && txtNumero.text != ""{
+                    owner?.editTelefone(editarTelefone!)
+                    navigationController?.popViewController(animated: true)
+                    x = 1
+                }else{
+                    lblMsg.text = "Todos os Campos São Obrigatórios!"
+                    break
+                }
+            }
         }
         else {
             let t = Telefone(context: contexto)
@@ -54,9 +66,18 @@ class EditarTelefoneViewController: UIViewController {
             t.ddd = Int16(txtDDD.text!)!
             t.numero = txtNumero.text
             
-            owner?.addTelefone(t)
+            var x = 0
+            while x == 0 {
+                if t.cliente != nil && txtDDI.text != "" && txtDDD.text != "" && txtNumero.text != ""{
+                    owner?.addTelefone(t)
+                    lblMsg.text = ""
+                    navigationController?.popViewController(animated: true)
+                    x = 1
+                }else{
+                    lblMsg.text = "Todos os Campos São Obrigatórios!"
+                    break
+                }
+            }
         }
-        
-        navigationController?.popViewController(animated: true)
     }
 }

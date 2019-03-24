@@ -19,10 +19,14 @@ class PizzaViewModel {
     
     init() {
         loadData()
-//        listaPizzas[0].sabor = "Quatro Queijo"
-//        listaPizzas[0].tamanho = "M"
-//        listaPizzas[0].valor = 20.00
-//        saveData()
+        if listaPizzas.count == 0 {
+            let p = Pizza(context: contexto)
+            p.sabor = "Quatro Queijo"
+            p.tamanho = "M"
+            p.valor = 20.00
+            listaPizzas.append(p)
+            saveData()
+        }
     }
 
     func saveData() {
