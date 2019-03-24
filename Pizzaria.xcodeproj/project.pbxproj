@@ -36,6 +36,8 @@
 		96F5D0F92245DC5100B7E6F8 /* EditarClienteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5D0F82245DC5100B7E6F8 /* EditarClienteViewController.swift */; };
 		96F5D0FB2246705400B7E6F8 /* EnderecosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5D0FA2246705400B7E6F8 /* EnderecosTableViewController.swift */; };
 		96F5D0FD224676AD00B7E6F8 /* EditarEnderecoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5D0FC224676AD00B7E6F8 /* EditarEnderecoViewController.swift */; };
+		96F5D0FF2246BF2600B7E6F8 /* TelefonesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5D0FE2246BF2600B7E6F8 /* TelefonesTableViewController.swift */; };
+		96F5D1012246BF3D00B7E6F8 /* EditarTelefoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5D1002246BF3D00B7E6F8 /* EditarTelefoneViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		96F5D0F82245DC5100B7E6F8 /* EditarClienteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarClienteViewController.swift; sourceTree = "<group>"; };
 		96F5D0FA2246705400B7E6F8 /* EnderecosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnderecosTableViewController.swift; sourceTree = "<group>"; };
 		96F5D0FC224676AD00B7E6F8 /* EditarEnderecoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarEnderecoViewController.swift; sourceTree = "<group>"; };
+		96F5D0FE2246BF2600B7E6F8 /* TelefonesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelefonesTableViewController.swift; sourceTree = "<group>"; };
+		96F5D1002246BF3D00B7E6F8 /* EditarTelefoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarTelefoneViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,8 @@
 				96F5D0F82245DC5100B7E6F8 /* EditarClienteViewController.swift */,
 				96F5D0FA2246705400B7E6F8 /* EnderecosTableViewController.swift */,
 				96F5D0FC224676AD00B7E6F8 /* EditarEnderecoViewController.swift */,
+				96F5D0FE2246BF2600B7E6F8 /* TelefonesTableViewController.swift */,
+				96F5D1002246BF3D00B7E6F8 /* EditarTelefoneViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -248,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96F5D1012246BF3D00B7E6F8 /* EditarTelefoneViewController.swift in Sources */,
 				966930F7223F29BB00B72EFD /* Telefone.swift in Sources */,
 				960A6D4422446339005FC644 /* EnderecoViewModel.swift in Sources */,
 				96F5D0F92245DC5100B7E6F8 /* EditarClienteViewController.swift in Sources */,
@@ -255,6 +262,7 @@
 				57B164D922430CB300752EE8 /* PizzasTableViewController.swift in Sources */,
 				960A6D48224463EF005FC644 /* PizzasPedidoViewModel.swift in Sources */,
 				57A42050223C735B00488B78 /* Pizzaria.xcdatamodeld in Sources */,
+				96F5D0FF2246BF2600B7E6F8 /* TelefonesTableViewController.swift in Sources */,
 				960A6D4622446395005FC644 /* TelefoneViewModel.swift in Sources */,
 				57A4204A223C735B00488B78 /* ViewController.swift in Sources */,
 				960A6D4022445776005FC644 /* PizzaViewlModel.swift in Sources */,

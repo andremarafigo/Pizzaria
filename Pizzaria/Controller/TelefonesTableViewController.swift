@@ -1,5 +1,5 @@
 //
-//  EnderecosTableViewController.swift
+//  TelefonesTableViewController.swift
 //  Pizzaria
 //
 //  Created by André Marafigo on 23/03/19.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-class EnderecosTableViewController: UITableViewController {
-
+class TelefonesTableViewController: UITableViewController {
+    
     var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var owner : EditarClienteViewController?
     
-    var enderecos : [Endereco] = []
-    
+    var telefones = [Telefone]()
+
     override func viewDidLoad() {
         navigationItem.rightBarButtonItems?.append(editButtonItem)
     }
@@ -25,14 +25,14 @@ class EnderecosTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return enderecos.count
+        return telefones.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "listaEnderecos", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "listaTelefones", for: indexPath)
+        let nu = String(telefones[indexPath.row].numero!)
         
-        cell.textLabel?.text = enderecos[indexPath.row].nome_rua
-        cell.detailTextLabel?.text = String(enderecos[indexPath.row].numero)
+        cell.textLabel?.text = ("(+\(telefones[indexPath.row].ddi))-(\(telefones[indexPath.row].ddd))-\(nu)")
         
         return cell
     }
@@ -41,22 +41,22 @@ class EnderecosTableViewController: UITableViewController {
         return true
     }
     
-    func addEndereco(_ endereco : Endereco) {
-        enderecos.append(endereco)
-        owner?.owner?.clientes.listaEnderecos.append(endereco)
+    func addTelefone(_ telefone : Telefone) {
+        telefones.append(telefone)
+        owner?.owner?.clientes.listaTelefones.append(telefone)
         owner?.owner?.clientes.saveData()
         
-        let cell = IndexPath(row: enderecos.count - 1, section: 0)
+        let cell = IndexPath(row: telefones.count - 1, section: 0)
         tableView.beginUpdates()
         tableView.insertRows(at: [cell], with: .bottom)
         tableView.endUpdates()
     }
     
-    func editEndereco(_ endereco : Endereco) {
+    func editTelefone(_ telefone : Telefone) {
         var n = 0
-        for e in (owner?.owner?.clientes.listaEnderecos)! {
-            if e == endereco {
-                owner?.owner?.clientes.listaEnderecos[n] = endereco
+        for e in (owner?.owner?.clientes.listaTelefones)! {
+            if e == telefone {
+                owner?.owner?.clientes.listaTelefones[n] = telefone
             }
             n += 1
         }
@@ -64,13 +64,13 @@ class EnderecosTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let next = segue.destination as! EditarEnderecoViewController
+        let next = segue.destination as! EditarTelefoneViewController
         next.owner = self
         
-        if segue.identifier == "editarEndereco" {
-            next.editarEndereco = enderecos[(tableView.indexPathForSelectedRow?.row)!]
+        if segue.identifier == "editarTelefone" {
+            next.editarTelefone = telefones[(tableView.indexPathForSelectedRow?.row)!]
         } else {
-            next.editarEndereco = nil
+            next.editarTelefone = nil
         }
     }
 }

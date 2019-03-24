@@ -51,7 +51,7 @@ class EditarEnderecoViewController: UIViewController {
         else {
             let e = Endereco(context: contexto)
             
-            e.cliente = editarEndereco?.cliente
+            e.cliente = owner?.owner?.editarCliente
             e.cep = txtCEP.text
             e.nome_rua = txtRua.text
             e.numero = Int16(txtNumero.text!)!

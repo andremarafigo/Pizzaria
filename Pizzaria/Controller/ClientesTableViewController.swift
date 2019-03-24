@@ -59,22 +59,12 @@ class ClientesTableViewController: UITableViewController {
     
     func editEndereco(_ enderecos : [Endereco]) {
         clientes.listaEnderecos = enderecos
-//        let index = tableView.indexPathForSelectedRow?.row
-//        clientes.listaEnderecos[index!].cliente = endereco.cliente
-//        clientes.listaEnderecos[index!].cep = endereco.cep
-//        clientes.listaEnderecos[index!].nome_rua = endereco.nome_rua
-//        clientes.listaEnderecos[index!].numero = endereco.numero
         clientes.saveData()
         self.tableView.reloadData()
     }
     
     func editTelefone(_ telefones : [Telefone]) {
         clientes.listaTelefones = telefones
-//        let index = tableView.indexPathForSelectedRow?.row
-//        clientes.listaTelefones[index!].cliente = telefone.cliente
-//        clientes.listaTelefones[index!].ddi = telefone.ddi
-//        clientes.listaTelefones[index!].ddd = telefone.ddd
-//        clientes.listaTelefones[index!].numero = telefone.numero
         clientes.saveData()
         self.tableView.reloadData()
     }
@@ -82,21 +72,11 @@ class ClientesTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let next = segue.destination as! EditarClienteViewController
         next.owner = self
+        let index = tableView.indexPathForSelectedRow?.row
         
         if segue.identifier == "editarCliente" {
             next.editarCliente = clientes.listaClientes[(tableView.indexPathForSelectedRow?.row)!]
-            //next.editarEnderecos = clientes.listaEnderecos
-            //next.editarTelefones = clientes.listaTelefones
-//            for e in clientes.listaEnderecos {
-//                if e.cliente == next.editarCliente {
-//                    next.editarEndereco = e
-//                }
-//            }
-//            for t in clientes.listaTelefones {
-//                if t.cliente == next.editarCliente {
-//                    next.editarTelefone = t
-//                }
-//            }
+            next.index = index
         } else {
             next.editarCliente = nil
         }

@@ -15,21 +15,37 @@ class EditarClienteViewController: UIViewController {
     var owner : ClientesTableViewController?
     
     var editarCliente : Cliente?
+    var index : Int?
     //var editarEnderecos : [Endereco]?
     //var editarTelefones : [Telefone]?
   
     @IBOutlet weak var txtNome: UITextField!
     @IBOutlet weak var txtCPF: UITextField!
     
+    @IBOutlet weak var lblEndereco: UILabel!
+    @IBOutlet weak var lblTelefone: UILabel!
+
+    @IBOutlet weak var btnEndereco: UIButton!
+    @IBOutlet weak var btnTelefone: UIButton!
+    
     override func viewWillAppear(_ animated: Bool) {
         if editarCliente != nil {
             txtNome.text = editarCliente?.nome
             txtCPF.text = editarCliente?.cpf
+            btnEndereco.isEnabled = true
+            btnTelefone.isEnabled = true
+            lblEndereco.text = String(editarCliente!.enderecos!.count)
+            lblTelefone.text = String(editarCliente!.telefones!.count)
         }
     }
     
+    
     @IBAction func btnCancelarClick(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func btnSalvar2(_ sender: AnyObject) {
+        btnSalvarClick(sender)
     }
     
     @IBAction func btnSalvarClick(_ sender: AnyObject) {
@@ -73,6 +89,9 @@ class EditarClienteViewController: UIViewController {
             owner?.addCliente(c)
         }
         
+        btnEndereco.isEnabled = true
+        btnTelefone.isEnabled = true
+        
         navigationController?.popViewController(animated: true)
     }
     
@@ -81,26 +100,23 @@ class EditarClienteViewController: UIViewController {
             let next = segue.destination as! EnderecosTableViewController
             next.owner = self
             
-            var n = 0
-            
-            for endereco in (owner?.clientes.listaEnderecos)! {
-                if endereco.cliente == editarCliente {
-                    next.enderecos.append((owner?.clientes.listaEnderecos[n])!)
+            for x in (owner?.clientes.listaEnderecos)! {
+                if x.cliente == editarCliente && x.cliente != nil{
+                    next.enderecos.append(x)
                 }
-                n += 1
             }
-//        }else if segue.identifier == "editarTelefone" {
-//            let next = segue.destination as! TelefonesTableViewController
-//            next.owner = self
-//
-//            var n = 0
-//
-//            for endereco in (owner?.clientes.listaTelefones)! {
-//                if endereco.cliente == editarCliente {
-//                    next.telefones?.append((owner?.clientes.listaTelefones[n])!)
-//                }
-//                n += 1
-//            }
+        }else if segue.identifier == "editarClienteToTelefones" {
+            let next = segue.destination as! TelefonesTableViewController
+            next.owner = self
+            
+            var n2 = 0
+            
+            for telefone in (owner?.clientes.listaTelefones)! {
+                if telefone.cliente == editarCliente {
+                    next.telefones.append((owner?.clientes.listaTelefones[n2])!)
+                }
+                n2 = n2 + 1
+            }
         }
     }
     
