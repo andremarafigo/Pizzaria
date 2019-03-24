@@ -38,6 +38,7 @@
 		96F5D0FD224676AD00B7E6F8 /* EditarEnderecoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5D0FC224676AD00B7E6F8 /* EditarEnderecoViewController.swift */; };
 		96F5D0FF2246BF2600B7E6F8 /* TelefonesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5D0FE2246BF2600B7E6F8 /* TelefonesTableViewController.swift */; };
 		96F5D1012246BF3D00B7E6F8 /* EditarTelefoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5D1002246BF3D00B7E6F8 /* EditarTelefoneViewController.swift */; };
+		96F5D1032247B8A000B7E6F8 /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5D1022247B8A000B7E6F8 /* MapaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		96F5D0FC224676AD00B7E6F8 /* EditarEnderecoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarEnderecoViewController.swift; sourceTree = "<group>"; };
 		96F5D0FE2246BF2600B7E6F8 /* TelefonesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelefonesTableViewController.swift; sourceTree = "<group>"; };
 		96F5D1002246BF3D00B7E6F8 /* EditarTelefoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarTelefoneViewController.swift; sourceTree = "<group>"; };
+		96F5D1022247B8A000B7E6F8 /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				96F5D0FC224676AD00B7E6F8 /* EditarEnderecoViewController.swift */,
 				96F5D0FE2246BF2600B7E6F8 /* TelefonesTableViewController.swift */,
 				96F5D1002246BF3D00B7E6F8 /* EditarTelefoneViewController.swift */,
+				96F5D1022247B8A000B7E6F8 /* MapaViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				966930F6223F29BB00B72EFD /* Pizza.swift in Sources */,
 				96F5D0FB2246705400B7E6F8 /* EnderecosTableViewController.swift in Sources */,
 				966930E5223EF4E400B72EFD /* PedidoViewModel.swift in Sources */,
+				96F5D1032247B8A000B7E6F8 /* MapaViewController.swift in Sources */,
 				966930F9223F29BB00B72EFD /* Endereco.swift in Sources */,
 				57A3770622406D68005F840A /* PopulaBase.swift in Sources */,
 			);

@@ -25,6 +25,7 @@ class EditarPizzaViewController: UIViewController {
             txtSabor.text = editarPizza?.sabor
             txtTamanho.text = editarPizza?.tamanho
             txtValor.text = String(editarPizza!.valor)
+            lblMsg.text = ""
         }
     }
 

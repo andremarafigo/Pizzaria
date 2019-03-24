@@ -43,6 +43,13 @@ class PizzasTableViewController: UITableViewController {
         return true
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            pizzas.deletData(pizzas.listaPizzas[indexPath.row])
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     func addPizza(_ pizza : Pizza) {
         pizzas.listaPizzas.append(pizza)
         pizzas.saveData()

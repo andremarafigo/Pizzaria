@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class EditarClienteViewController: UIViewController {
 
@@ -16,8 +17,6 @@ class EditarClienteViewController: UIViewController {
     
     var editarCliente : Cliente?
     var index : Int?
-    //var editarEnderecos : [Endereco]?
-    //var editarTelefones : [Telefone]?
   
     @IBOutlet weak var txtNome: UITextField!
     @IBOutlet weak var txtCPF: UITextField!
@@ -58,7 +57,6 @@ class EditarClienteViewController: UIViewController {
             for endereco in (owner?.clientes.listaEnderecos)! {
                 if endereco.cliente == cliente {
                     owner?.clientes.listaEnderecos[n].cliente = editarCliente
-                    //e.cliente = editarCliente
                 }
                 n += 1
             }
@@ -67,7 +65,6 @@ class EditarClienteViewController: UIViewController {
             for telefone in (owner?.clientes.listaTelefones)! {
                 if telefone.cliente == cliente {
                     owner?.clientes.listaTelefones[n].cliente = editarCliente
-                    //e.cliente = editarCliente
                 }
                 n += 1
             }

@@ -31,14 +31,35 @@ class EnderecosTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listaEnderecos", for: indexPath)
         
-        cell.textLabel?.text = enderecos[indexPath.row].nome_rua
-        cell.detailTextLabel?.text = String(enderecos[indexPath.row].numero)
+        let t: String = ("\(enderecos[indexPath.row].nome_rua!)")
+        let n: String = String("\(enderecos[indexPath.row].numero)")
+        let tn: String = "\(t), N.-\(n)"
+        cell.textLabel?.text = tn
         
         return cell
     }
     
+    @IBAction func btnMapaClick(_ sender: Any) {
+    }
+    
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            var n = 0
+            for x in owner!.owner!.clientes.listaEnderecos {
+                if x == enderecos[indexPath.row] {
+                    owner!.owner!.clientes.deleteEnderecoData(owner!.owner!.clientes.listaEnderecos[n])
+                    enderecos.remove(at: indexPath.row)
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                    self.tableView.reloadData()
+                    break
+                }
+                n += 1
+            }
+        }
     }
     
     func addEndereco(_ endereco : Endereco) {
@@ -64,13 +85,17 @@ class EnderecosTableViewController: UITableViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let next = segue.destination as! EditarEnderecoViewController
-        next.owner = self
-        
-        if segue.identifier == "editarEndereco" {
-            next.editarEndereco = enderecos[(tableView.indexPathForSelectedRow?.row)!]
-        } else {
-            next.editarEndereco = nil
+        if segue.identifier == "criarEndereco" {
+            let nextEditar = segue.destination as! EditarEnderecoViewController
+            nextEditar.owner = self
+            nextEditar.editarEndereco = nil
+        }else if segue.identifier == "editarEndereco" {
+            let nextEditar = segue.destination as! EditarEnderecoViewController
+            nextEditar.owner = self
+            nextEditar.editarEndereco = enderecos[(tableView.indexPathForSelectedRow?.row)!]
+        }else if segue.identifier == "mapa"{
+            let nextMapa = segue.destination as! MapaViewController
+            nextMapa.endereco = enderecos[(tableView.indexPathForSelectedRow?.row)!]
         }
     }
 }

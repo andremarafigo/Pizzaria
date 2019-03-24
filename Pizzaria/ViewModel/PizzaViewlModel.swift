@@ -29,6 +29,11 @@ class PizzaViewModel {
         }
     }
 
+    func deletData(_ pizza : Pizza) {
+        contexto.delete(pizza)
+        loadData()
+    }
+    
     func saveData() {
         do {
             try contexto.save()

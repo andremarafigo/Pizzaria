@@ -39,6 +39,14 @@ class ClientesTableViewController: UITableViewController {
         return true
     }
     
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            clientes.deleteClienteData(clientes.listaClientes[indexPath.row])
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     func addCliente(_ cliente : Cliente) {
         clientes.listaClientes.append(cliente)
         clientes.saveData()

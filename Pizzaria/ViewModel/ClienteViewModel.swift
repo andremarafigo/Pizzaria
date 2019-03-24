@@ -49,6 +49,21 @@ class ClienteViewModel {
         }
     }
     
+    func deleteClienteData(_ cliente : Cliente) {
+        contexto.delete(cliente)
+        loadData()
+    }
+    
+    func deleteEnderecoData(_ endereco : Endereco) {
+        contexto.delete(endereco)
+        loadData()
+    }
+    
+    func deleteTelefoneData(_ telefone : Telefone) {
+        contexto.delete(telefone)
+        loadData()
+    }
+    
     func saveData() {
         do {
             try contexto.save()

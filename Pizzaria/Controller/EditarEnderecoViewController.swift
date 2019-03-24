@@ -39,6 +39,7 @@ class EditarEnderecoViewController: UIViewController {
             var n = 0
             let endereco = editarEndereco
             editarEndereco!.cep = txtCEP.text
+            editarEndereco!.nome_rua = txtRua.text
             editarEndereco!.numero = Int16(txtNumero.text!)!
             
             

@@ -41,6 +41,22 @@ class TelefonesTableViewController: UITableViewController {
         return true
     }
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            var n = 0
+            for x in owner!.owner!.clientes.listaTelefones {
+                if x == telefones[indexPath.row] {
+                    owner!.owner!.clientes.deleteTelefoneData(owner!.owner!.clientes.listaTelefones[n])
+                    telefones.remove(at: indexPath.row)
+                    tableView.deleteRows(at: [indexPath], with: .fade)
+                    self.tableView.reloadData()
+                    break
+                }
+                n += 1
+            }
+        }
+    }
+    
     func addTelefone(_ telefone : Telefone) {
         telefones.append(telefone)
         owner?.owner?.clientes.listaTelefones.append(telefone)
@@ -68,8 +84,10 @@ class TelefonesTableViewController: UITableViewController {
         next.owner = self
         
         if segue.identifier == "editarTelefone" {
+            next.owner = self
             next.editarTelefone = telefones[(tableView.indexPathForSelectedRow?.row)!]
         } else {
+            next.owner = self
             next.editarTelefone = nil
         }
     }
