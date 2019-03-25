@@ -12,12 +12,21 @@ import MapKit
 class MapaViewController: UIViewController {
 
     var endereco : Endereco?
+
+    let lm = CLLocationManager()
     
     @IBOutlet weak var mapa: MKMapView!
     
     override func viewWillAppear(_ animated: Bool) {
- 
+        
         if endereco != nil {
+            
+            //Precisão da localização
+            lm.desiredAccuracy = kCLLocationAccuracyHundredMeters
+            //Solicita Permissão
+            lm.requestWhenInUseAuthorization()
+            //Starta o GPS
+            //lm.startUpdatingLocation()
             
             UIApplication.shared.beginIgnoringInteractionEvents()
             
@@ -32,7 +41,7 @@ class MapaViewController: UIViewController {
             let rua : String = String("\(endereco!.nome_rua!)")
             let numero : String = String("\(endereco!.numero)")
             let cep : String = String("\(endereco!.cep!)")
-            let local : String = String("\(rua), \(numero) - \(cep)")
+            let local : String = String("\(rua), \(numero) - CEP:\(cep)")
             searchRequest.naturalLanguageQuery = local
             
             let activeSearch = MKLocalSearch(request: searchRequest)
@@ -54,7 +63,8 @@ class MapaViewController: UIViewController {
                     
                     //Cria anotação
                     let anotacao = MKPointAnnotation()
-                    anotacao.title = "Paraná - Brasil"
+                    anotacao.title = self.endereco?.cliente?.nome
+                    anotacao.subtitle = local
                     anotacao.coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
                     self.mapa.addAnnotation(anotacao)
                     

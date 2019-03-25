@@ -84,4 +84,17 @@ class EditarEnderecoViewController: UIViewController {
             }
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editarEnderecoToMapa" {
+            let nextEditar = segue.destination as! MapaViewController
+            var local : Endereco = Endereco()
+            local = editarEndereco!
+            local.cep = txtCEP.text
+            local.nome_rua = txtRua.text
+            local.numero = Int16(txtNumero.text!)!
+            
+            nextEditar.endereco = local
+        }
+    }
 }

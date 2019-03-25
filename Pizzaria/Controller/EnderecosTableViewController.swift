@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol EnderecoTableView {
+    func onClickCell(index: Int)
+}
+
 class EnderecosTableViewController: UITableViewController {
 
     var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -15,6 +19,12 @@ class EnderecosTableViewController: UITableViewController {
     var owner : EditarClienteViewController?
     
     var enderecos : [Endereco] = []
+    
+    var indexx : IndexPath?
+    
+    func onClickCell(index: Int) {
+        print("\(index)")
+    }
     
     override func viewDidLoad() {
         navigationItem.rightBarButtonItems?.append(editButtonItem)
@@ -36,11 +46,25 @@ class EnderecosTableViewController: UITableViewController {
         let tn: String = "\(t), N.-\(n)"
         cell.textLabel?.text = tn
         
+//        let cell2 = tableView.dequeueReusableCell(withIdentifier: "listaEnderecos", for: indexPath) as? EnderecosTableViewController
+//        cell2?.indexx = indexPath
+        
         return cell
     }
     
-    @IBAction func btnMapaClick(_ sender: Any) {
-    }
+//    @IBAction func btnMapaClick(_ sender: Any) {
+//
+//        //let index = tableView.indexPathForSelectedRow?.row
+//
+//        let mapa = UIStoryboard(name: "mapaView", bundle: nil).instantiateInitialViewController()! as! MapaViewController
+//        mapa.local = "Foi"
+//        self.present(mapa, animated: true, completion: nil)
+//
+//
+//        let mapa = storyboard?.instantiateViewController(withIdentifier: "mapaView") as! MapaViewController
+//        mapa.local = "Sucesso"
+//        navigationController?.pushViewController(mapa, animated: true)
+//    }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -93,9 +117,10 @@ class EnderecosTableViewController: UITableViewController {
             let nextEditar = segue.destination as! EditarEnderecoViewController
             nextEditar.owner = self
             nextEditar.editarEndereco = enderecos[(tableView.indexPathForSelectedRow?.row)!]
-        }else if segue.identifier == "mapa"{
-            let nextMapa = segue.destination as! MapaViewController
-            nextMapa.endereco = enderecos[(tableView.indexPathForSelectedRow?.row)!]
         }
+//        }else if segue.identifier == "mapa"{
+//            let nextMapa = segue.destination as! MapaViewController
+//            nextMapa.endereco = enderecos[(tableView.indexPathForSelectedRow?.row)!]
+//        }
     }
 }
