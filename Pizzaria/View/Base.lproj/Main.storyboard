@@ -26,40 +26,46 @@
             </objects>
             <point key="canvasLocation" x="-1082" y="-823"/>
         </scene>
-        <!--Fotos-->
-        <scene sceneID="mYW-d7-195">
+        <!--Fotos Collection View Controller-->
+        <scene sceneID="q7E-Tp-pEe">
             <objects>
-                <collectionViewController id="7Ga-Mb-n0T" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="YT0-OR-duL">
+                <collectionViewController id="mr9-u9-aKW" customClass="FotosCollectionViewController" customModule="Pizzaria" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="dOz-TG-G9H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ACo-ln-WMb">
-                            <size key="itemSize" width="50" height="50"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="obh-gm-Bly">
+                            <size key="itemSize" width="100" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8hO-0b-rlg">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="fotoCell" id="G1T-6c-5P3">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="98y-4N-iIL">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </collectionViewCell>
                         </cells>
                         <connections>
-                            <outlet property="dataSource" destination="7Ga-Mb-n0T" id="kp8-Xu-0Uw"/>
-                            <outlet property="delegate" destination="7Ga-Mb-n0T" id="Ir8-Z1-qSE"/>
+                            <outlet property="dataSource" destination="mr9-u9-aKW" id="HF2-3j-XKK"/>
+                            <outlet property="delegate" destination="mr9-u9-aKW" id="6Iq-ie-yp4"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Fotos" id="NQi-bh-c3Q"/>
                 </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BIw-y3-jkz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k0o-va-sDS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3007" y="724"/>
+            <point key="canvasLocation" x="-2986.4000000000001" y="723.68815592203907"/>
         </scene>
         <!--Sobre-->
         <scene sceneID="jGG-sK-hM4">
@@ -81,7 +87,7 @@
                             </barButtonItem>
                             <barButtonItem title="Fotos" id="nuN-8O-HTK">
                                 <connections>
-                                    <segue destination="7Ga-Mb-n0T" kind="show" id="AXW-Wo-c0W"/>
+                                    <segue destination="mr9-u9-aKW" kind="show" id="8Kp-ix-ZpV"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -1143,6 +1149,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1" width="1200" height="1600"/>
         <image name="1024.png" width="1024" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>

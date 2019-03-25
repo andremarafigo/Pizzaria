@@ -12,7 +12,7 @@ import WebKit
 class SiteViewController: UIViewController {
 
     @IBOutlet weak var mSobre: WKWebView!
-    let urlSobre = URL(string: "https://www.google.com.br")
+    let urlSobre = URL(string: "https://www.justinopizzabar.com.br")
     
     override func viewDidLoad() {
         super.viewDidLoad()
