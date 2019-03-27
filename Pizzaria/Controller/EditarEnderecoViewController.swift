@@ -20,13 +20,17 @@ class EditarEnderecoViewController: UIViewController {
     @IBOutlet weak var txtRua: UITextField!
     @IBOutlet weak var txtNumero: UITextField!
     @IBOutlet weak var lblMsg: UILabel!
+    @IBOutlet weak var btnMapa: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
         if editarEndereco != nil {
+            
             txtCEP.text = editarEndereco?.cep
             txtRua.text = editarEndereco?.nome_rua
             txtNumero.text = String(editarEndereco!.numero)
             lblMsg.text = ""
+        }else{
+            btnMapa.isEnabled = false
         }
     }
     
@@ -88,13 +92,16 @@ class EditarEnderecoViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editarEnderecoToMapa" {
             let nextEditar = segue.destination as! MapaViewController
-            var local : Endereco = Endereco()
-            local = editarEndereco!
-            local.cep = txtCEP.text
-            local.nome_rua = txtRua.text
-            local.numero = Int16(txtNumero.text!)!
+//            let local : Endereco = Endereco()
+//            local.cep = txtCEP.text
+//            local.nome_rua = txtRua.text
+//            local.numero = Int16(txtNumero.text!)!
+            
+            let local : String = "\(String(describing: txtRua.text!)), N. \(String(describing: txtNumero.text!)) - CEP: \(String(describing: txtCEP.text!))"
+            let nomeCliente : String = (editarEndereco?.cliente?.nome)!
             
             nextEditar.endereco = local
+            nextEditar.nomeCliente = nomeCliente
         }
     }
 }

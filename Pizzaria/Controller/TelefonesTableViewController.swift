@@ -20,6 +20,10 @@ class TelefonesTableViewController: UITableViewController {
         navigationItem.rightBarButtonItems?.append(editButtonItem)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -76,6 +80,15 @@ class TelefonesTableViewController: UITableViewController {
             }
             n += 1
         }
+        
+        owner?.owner?.clientes.saveData()
+        telefones = []
+        for x in (owner?.owner?.clientes.listaTelefones)! {
+            if x.cliente == owner?.editarCliente && x.cliente != nil{
+                telefones.append(x)
+            }
+        }
+        
         self.tableView.reloadData()
     }
     

@@ -26,6 +26,7 @@ class EditarTelefoneViewController: UIViewController {
             txtDDI.text = String(editarTelefone!.ddi)
             txtDDD.text = String(editarTelefone!.ddd)
             txtNumero.text = editarTelefone!.numero
+            lblMsg.text = ""
         }
     }
     @IBAction func btnCancelarClick(_ sender: Any) {

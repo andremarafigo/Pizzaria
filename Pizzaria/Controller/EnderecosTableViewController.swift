@@ -22,12 +22,25 @@ class EnderecosTableViewController: UITableViewController {
     
     var indexx : IndexPath?
     
+    var rua : [String] = []
+    var numero : [String] = []
+    var cep : [String] = []
+    var nomeCliente : String = ""
+    
     func onClickCell(index: Int) {
         print("\(index)")
     }
     
     override func viewDidLoad() {
         navigationItem.rightBarButtonItems?.append(editButtonItem)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        rua = []
+        numero = []
+        cep = []
+        
+        tableView.reloadData()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -41,30 +54,16 @@ class EnderecosTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listaEnderecos", for: indexPath)
         
-        let t: String = ("\(enderecos[indexPath.row].nome_rua!)")
-        let n: String = String("\(enderecos[indexPath.row].numero)")
-        let tn: String = "\(t), N.-\(n)"
+        rua.append("\(String(describing: enderecos[indexPath.row].nome_rua!))")
+        numero.append(String("\(enderecos[indexPath.row].numero)"))
+        cep.append(String("\(String(describing: enderecos[indexPath.row].cep!))"))
+        nomeCliente = (enderecos[indexPath.row].cliente?.nome)!
+        
+        let tn: String = "\(rua[indexPath.row]), N.-\(numero[indexPath.row])"
         cell.textLabel?.text = tn
-        
-//        let cell2 = tableView.dequeueReusableCell(withIdentifier: "listaEnderecos", for: indexPath) as? EnderecosTableViewController
-//        cell2?.indexx = indexPath
-        
+
         return cell
     }
-    
-//    @IBAction func btnMapaClick(_ sender: Any) {
-//
-//        //let index = tableView.indexPathForSelectedRow?.row
-//
-//        let mapa = UIStoryboard(name: "mapaView", bundle: nil).instantiateInitialViewController()! as! MapaViewController
-//        mapa.local = "Foi"
-//        self.present(mapa, animated: true, completion: nil)
-//
-//
-//        let mapa = storyboard?.instantiateViewController(withIdentifier: "mapaView") as! MapaViewController
-//        mapa.local = "Sucesso"
-//        navigationController?.pushViewController(mapa, animated: true)
-//    }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -105,6 +104,15 @@ class EnderecosTableViewController: UITableViewController {
             }
             n += 1
         }
+        
+        owner?.owner?.clientes.saveData()
+        enderecos = []
+        for x in (owner?.owner?.clientes.listaEnderecos)! {
+            if x.cliente == owner?.editarCliente && x.cliente != nil{
+                enderecos.append(x)
+            }
+        }
+        
         self.tableView.reloadData()
     }
     
@@ -117,10 +125,20 @@ class EnderecosTableViewController: UITableViewController {
             let nextEditar = segue.destination as! EditarEnderecoViewController
             nextEditar.owner = self
             nextEditar.editarEndereco = enderecos[(tableView.indexPathForSelectedRow?.row)!]
+        }else if segue.identifier == "mapaView" {
+            let botao = sender as! UIButton
+            let content = botao.superview
+            let cell = content!.superview as! UITableViewCell
+            
+            let nextEditar = segue.destination as! MapaViewController
+            
+            let indexPath = tableView.indexPath(for: cell)
+            
+            let local : String = "\(rua[indexPath!.row]), N. \(numero[indexPath!.row]) - CEP: \(cep[indexPath!.row])"
+            let nomeCliente : String = self.nomeCliente
+            
+            nextEditar.endereco = local
+            nextEditar.nomeCliente = nomeCliente
         }
-//        }else if segue.identifier == "mapa"{
-//            let nextMapa = segue.destination as! MapaViewController
-//            nextMapa.endereco = enderecos[(tableView.indexPathForSelectedRow?.row)!]
-//        }
     }
 }

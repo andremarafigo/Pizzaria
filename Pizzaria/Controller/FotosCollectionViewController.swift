@@ -10,28 +10,28 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-struct Item {
-    var imageName: String
-}
+//struct String {
+//    var imageName: String
+//}
 
 class FotosCollectionViewController: UICollectionViewController {
 
     //var collectionViewFlowLayout: UICollectionViewFlowLayout!
     //let cellIdentifier = "itemCollectionViewCell"
     
-    var itens: [Item] = [Item(imageName: "1"),
-                         Item(imageName: "2"),
-                         Item(imageName: "3"),
-                         Item(imageName: "4"),
-                         Item(imageName: "4"),
-                         Item(imageName: "5"),
-                         Item(imageName: "6"),
-                         Item(imageName: "7"),
-                         Item(imageName: "8"),
-                         Item(imageName: "9"),
-                         Item(imageName: "10"),
-                         Item(imageName: "11"),
-                         Item(imageName: "12")]
+    var fotos: [String] = ["1",
+                         "2",
+                         "3",
+                         "4",
+                         "4",
+                         "5",
+                         "6",
+                         "7",
+                         "8",
+                         "9",
+                         "10",
+                         "11",
+                         "12"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,14 +71,17 @@ class FotosCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return itens.count
+        return fotos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "fotoCell", for: indexPath)
-    
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "fotoCell", for: indexPath) as! FotoCollectionViewCell
+        
+        cell.imageView.image = UIImage(named: fotos[indexPath.row])
+        
         return cell
     }
+    
     /*
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("didSelectItemAt: \(indexPath)")
