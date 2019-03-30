@@ -99,8 +99,8 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5TG-UZ-NCj">
                                         <rect key="frame" x="0.0" y="109.5" width="343" height="449.5"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <mutableString key="text">O IPizza é um aplicativo que nasceu de um desavio durante um curso de Capacitação IOs menistrado pelo professor Fabio Vinicius Binder, patrocinado pela Scopus com parceria com a Visionnaire e a PUCPR.
- O Aplicativo terá funcionalidades tanto para a empresa (Pizzaria) e consumidor (Cliente).  Funcionalidades para Pizzaria: - Será possivel realizar cadastro de Clientes, onde o mesmo poderá ter um ou mais endereços e telefones; - Cadastro de sabores de pizzas, valores e tamanhos; - Controle de pedidos salvando data e hora do pedido, cliente e pizzas escolhidas.  Funcionalidades para Cliente: - Montar seu pedido escolhendos as pizzas; - Forma de pagamento; - Forma de entraga.</mutableString>
+                                        <string key="text">O IPizza é um aplicativo que nasceu de um desavio durante um curso de Capacitação IOs menistrado pelo professor Fabio Vinicius Binder, patrocinado pela Scopus com parceria com a Visionnaire e a PUCPR.
+ O Aplicativo terá funcionalidades tanto para a empresa (Pizzaria) e consumidor (Cliente).  Funcionalidades para Pizzaria: - Será possivel realizar cadastro de Clientes, onde o mesmo poderá ter um ou mais endereços e telefones; - Cadastro de sabores de pizzas, valores e tamanhos; - Controle de pedidos salvando data e hora do pedido, cliente e pizzas escolhidas.  Funcionalidades para Cliente: - Montar seu pedido escolhendos as pizzas; - Forma de pagamento; - Forma de entraga.</string>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -362,7 +362,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Clientes" id="Iqc-tg-J3h">
-                        <barButtonItem key="backBarButtonItem" title="Cancelar" id="Uop-8X-NPU"/>
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="Uop-8X-NPU"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="whT-jJ-osM">
                             <connections>
                                 <segue destination="a45-Xf-IVe" kind="show" identifier="criarCliente" id="JNj-9C-6S2"/>
@@ -468,11 +468,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Endereço" id="8KS-om-dik">
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="r5r-Vl-5dZ"/>
-                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="6QD-0j-tFc">
-                            <connections>
-                                <action selector="btnCancelarClick:" destination="uVf-iW-hpe" id="wyn-vQ-Ub1"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="oat-pc-I4Z">
                             <connections>
                                 <action selector="btnSalvarClick:" destination="uVf-iW-hpe" id="KNx-Je-zOz"/>
@@ -756,7 +751,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3Ia-UN-Yo0">
                                 <rect key="frame" x="0.0" y="224" width="375" height="130"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salve Para Habilitar!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="944-aH-qXy">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="944-aH-qXy">
                                         <rect key="frame" x="20" y="0.0" width="335" height="30"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -825,11 +820,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Cliente" id="BFs-yl-fQ3">
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="m9W-Yx-T9y"/>
-                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="GZp-3q-O5I">
-                            <connections>
-                                <action selector="btnCancelarClick:" destination="a45-Xf-IVe" id="czX-OK-UFF"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="F0k-nd-IF4">
                             <connections>
                                 <action selector="btnSalvarClick:" destination="a45-Xf-IVe" id="Vrw-he-hU6"/>
@@ -1176,13 +1166,20 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todos os Campos São Obrigatórios!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDD-3g-ajL">
-                                        <rect key="frame" x="42" y="228" width="291.5" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDD-3g-ajL">
+                                        <rect key="frame" x="20" y="228" width="335" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="0JW-Y5-nWk"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="QDD-3g-ajL" firstAttribute="leading" secondItem="9Rw-hB-034" secondAttribute="leading" constant="20" id="4Qh-qR-5gx"/>
+                                    <constraint firstAttribute="trailing" secondItem="QDD-3g-ajL" secondAttribute="trailing" constant="20" id="r4l-LV-PPj"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1194,11 +1191,6 @@
                         <viewLayoutGuide key="safeArea" id="BwI-Ol-iAS"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sabor" id="p6p-kP-W44">
-                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="bIc-yc-avo">
-                            <connections>
-                                <action selector="onCancelarClickWithSender:" destination="szn-Wm-KPp" id="xpn-01-kkU"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="Zhu-y7-J76">
                             <connections>
                                 <action selector="btnSalvarClickWithSender:" destination="szn-Wm-KPp" id="hZS-CT-ObX"/>

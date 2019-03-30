@@ -17,6 +17,8 @@ class EditarClienteViewController: UIViewController {
     
     var editarCliente : Cliente?
     var index : Int?
+    
+    let clienteViewModel : ClienteViewModel = ClienteViewModel()
   
     @IBOutlet weak var txtNome: UITextField!
     @IBOutlet weak var txtCPF: UITextField!
@@ -33,73 +35,82 @@ class EditarClienteViewController: UIViewController {
         if editarCliente != nil {
             txtNome.text = editarCliente?.nome
             txtCPF.text = editarCliente?.cpf
-            lblMsg.text = ""
+            //lblMsg.text = ""
             btnEndereco.isEnabled = true
             btnTelefone.isEnabled = true
             lblEndereco.text = String(editarCliente!.enderecos!.count)
             lblTelefone.text = String(editarCliente!.telefones!.count)
+        }else{
+            if txtNome.text == "" {
+                lblMsg.text = "Salve Para Habilitar!"
+            }
         }
     }
     
     
-    @IBAction func btnCancelarClick(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
+//    @IBAction func btnCancelarClick(_ sender: Any) {
+//        navigationController?.popViewController(animated: true)
+//    }
     
     
     @IBAction func btnSalvarClick(_ sender: AnyObject) {
         if (editarCliente != nil) {
             var n = 0
-            let cliente = editarCliente
-            editarCliente!.nome = txtNome.text
-            editarCliente!.cpf = txtCPF.text
-            
-            for endereco in (owner?.clientes.listaEnderecos)! {
-                if endereco.cliente == cliente {
-                    owner?.clientes.listaEnderecos[n].cliente = editarCliente
-                }
-                n += 1
-            }
-            
-            n = 0
-            for telefone in (owner?.clientes.listaTelefones)! {
-                if telefone.cliente == cliente {
-                    owner?.clientes.listaTelefones[n].cliente = editarCliente
-                }
-                n += 1
-            }
-            
             var x = 0
-            while x == 0 {
-                if txtNome.text != "" && txtCPF.text != ""{
-                    owner?.editCliente(editarCliente!)
-                    navigationController?.popViewController(animated: true)
-                    x = 1
-                }else{
-                    lblMsg.text = "Nome e CPF são Obrigatórios!"
-                    break
-                }
+            if txtNome.text != "" && txtCPF.text != ""{
+                while x == 0 {
+                        let cliente = editarCliente
+                        editarCliente!.nome = txtNome.text
+                        editarCliente!.cpf = txtCPF.text
+                        for endereco in (owner?.clientes.listaEnderecos)! {
+                            if endereco.cliente == cliente {
+                                owner?.clientes.listaEnderecos[n].cliente = editarCliente
+                            }
+                            n += 1
+                        }
+                    
+                        n = 0
+                        for telefone in (owner?.clientes.listaTelefones)! {
+                            if telefone.cliente == cliente {
+                                owner?.clientes.listaTelefones[n].cliente = editarCliente
+                            }
+                            n += 1
+                        }
+                    
+                        clienteViewModel.saveData()
+                    
+                        lblMsg.text = "Dados salvos com sucesso!"
+                        self.viewWillAppear(true)
+                    
+    //                    owner?.editCliente(editarCliente!)
+    //                    navigationController?.popViewController(animated: true)
+                        x = 1
+                    }
+            }else{
+                lblMsg.text = "Nome e CPF são Obrigatórios!"
             }
         }
         else {
-            let c = Cliente(context: contexto)
-            
-            c.nome = txtNome.text
-            c.cpf = txtCPF.text
-            
             var x = 0
-            while x == 0 {
-                if txtNome.text != "" && txtCPF.text != ""{
+            
+            if txtNome.text != "" && txtCPF.text != ""{
+                while x == 0 {
+                    let c = Cliente(context: contexto)
+                    c.nome = txtNome.text
+                    c.cpf = txtCPF.text
+                
                     owner?.addCliente(c)
                     btnEndereco.isEnabled = true
                     btnTelefone.isEnabled = true
-                    lblMsg.text = ""
-                    navigationController?.popViewController(animated: true)
+                    
+                    //clienteViewModel.saveData()
+                    lblMsg.text = "Dados salvos com sucesso!"
+                    self.viewWillAppear(true)
+                    //navigationController?.popViewController(animated: true)
                     x = 1
-                }else{
-                    lblMsg.text = "Nome e CPF são Obrigatórios!"
-                    break
                 }
+            }else{
+                lblMsg.text = "Nome e CPF são Obrigatórios!"
             }
         }
     }

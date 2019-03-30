@@ -25,13 +25,13 @@ class EditarPizzaViewController: UIViewController {
             txtSabor.text = editarPizza?.sabor
             txtTamanho.text = editarPizza?.tamanho
             txtValor.text = String(editarPizza!.valor)
-            lblMsg.text = ""
+            //lblMsg.text = ""
         }
     }
 
-    @IBAction func onCancelarClick(sender: AnyObject){
-        navigationController?.popViewController(animated: true)
-    }
+//    @IBAction func onCancelarClick(sender: AnyObject){
+//        navigationController?.popViewController(animated: true)
+//    }
 
 
     @IBAction func btnSalvarClick(sender: AnyObject){
@@ -44,8 +44,10 @@ class EditarPizzaViewController: UIViewController {
             var x = 0
             while x == 0 {
                 if txtSabor.text != "" && txtTamanho.text != "" && txtValor.text != ""{
-                    owner?.editPizza(editarPizza!)
-                    navigationController?.popViewController(animated: true)
+                    owner?.pizzas.saveData()
+                    self.viewWillAppear(true)
+//                    owner?.editPizza(editarPizza!)
+//                    navigationController?.popViewController(animated: true)
                     x = 1
                 }else{
                     lblMsg.text = "Todos os Campos São Obrigatórios!"

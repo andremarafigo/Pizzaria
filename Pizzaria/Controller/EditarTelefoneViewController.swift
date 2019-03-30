@@ -15,6 +15,8 @@ class EditarTelefoneViewController: UIViewController {
     var owner : TelefonesTableViewController?
     
     var editarTelefone : Telefone?
+    
+    let clienteViewModel : ClienteViewModel = ClienteViewModel()
 
     @IBOutlet weak var txtDDI: UITextField!
     @IBOutlet weak var txtDDD: UITextField!
@@ -26,7 +28,7 @@ class EditarTelefoneViewController: UIViewController {
             txtDDI.text = String(editarTelefone!.ddi)
             txtDDD.text = String(editarTelefone!.ddd)
             txtNumero.text = editarTelefone!.numero
-            lblMsg.text = ""
+            //lblMsg.text = ""
         }
     }
     @IBAction func btnCancelarClick(_ sender: Any) {
@@ -50,11 +52,18 @@ class EditarTelefoneViewController: UIViewController {
             var x = 0
             while x == 0 {
                 if telefone!.cliente != nil && txtDDI.text != "" && txtDDD.text != "" && txtNumero.text != ""{
-                    owner?.editTelefone(editarTelefone!)
-                    navigationController?.popViewController(animated: true)
+                    clienteViewModel.saveData()
+                    
+                    //owner?.owner?.owner?.clientes.saveData()
+                    
+                    lblMsg.text = "Dados salvos com sucesso!"
+                    self.viewWillAppear(true)
+                    
+//                    owner?.editTelefone(editarTelefone!)
+//                    navigationController?.popViewController(animated: true)
                     x = 1
                 }else{
-                    lblMsg.text = "Todos os Campos São Obrigatórios!"
+                    lblMsg.text = "Todos os campos são obrigatórios!"
                     break
                 }
             }

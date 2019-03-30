@@ -16,6 +16,8 @@ class EditarEnderecoViewController: UIViewController {
     
     var editarEndereco : Endereco?
     
+    let clienteViewModel : ClienteViewModel = ClienteViewModel()
+    
     @IBOutlet weak var txtCEP: UITextField!
     @IBOutlet weak var txtRua: UITextField!
     @IBOutlet weak var txtNumero: UITextField!
@@ -28,15 +30,15 @@ class EditarEnderecoViewController: UIViewController {
             txtCEP.text = editarEndereco?.cep
             txtRua.text = editarEndereco?.nome_rua
             txtNumero.text = String(editarEndereco!.numero)
-            lblMsg.text = ""
+            //lblMsg.text = ""
         }else{
             btnMapa.isEnabled = false
         }
     }
     
-    @IBAction func btnCancelarClick(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
+//    @IBAction func btnCancelarClick(_ sender: Any) {
+//        navigationController?.popViewController(animated: true)
+//    }
     
     @IBAction func btnSalvarClick(_ sender: Any) {
         if (editarEndereco != nil) {
@@ -57,11 +59,18 @@ class EditarEnderecoViewController: UIViewController {
             var x = 0
             while x == 0 {
                 if endereco!.cliente != nil && txtCEP.text != "" && txtRua.text != "" && txtNumero.text != ""{
-                    owner?.editEndereco(editarEndereco!)
-                    navigationController?.popViewController(animated: true)
+                    clienteViewModel.saveData()
+                    
+                    //owner?.owner?.owner?.clientes.saveData()
+                    
+                    lblMsg.text = "Dados salvos com sucesso!"
+                    self.viewWillAppear(true)
+                    
+//                    owner?.editEndereco(editarEndereco!)
+//                    navigationController?.popViewController(animated: true)
                     x = 1
                 }else{
-                    lblMsg.text = "Todos os Campos São Obrigatórios!"
+                    lblMsg.text = "Todos os campos são obrigatórios!"
                     break
                 }
             }
@@ -82,7 +91,7 @@ class EditarEnderecoViewController: UIViewController {
                     navigationController?.popViewController(animated: true)
                     x = 1
                 }else{
-                    lblMsg.text = "Todos os Campos São Obrigatórios!"
+                    lblMsg.text = "Todos os campos são obrigatórios!"
                     break
                 }
             }

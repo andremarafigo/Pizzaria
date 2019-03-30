@@ -19,6 +19,10 @@ class PizzasTableViewController: UITableViewController {
     override func viewDidLoad() {
         navigationItem.rightBarButtonItems?.append(editButtonItem)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1

@@ -25,7 +25,6 @@
 		960A6D4622446395005FC644 /* TelefoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960A6D4522446395005FC644 /* TelefoneViewModel.swift */; };
 		960A6D48224463EF005FC644 /* PizzasPedidoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 960A6D47224463EF005FC644 /* PizzasPedidoViewModel.swift */; };
 		962D9EBF22482E6E008E5209 /* IPizza.png in Resources */ = {isa = PBXBuildFile; fileRef = 962D9EBE22482E6D008E5209 /* IPizza.png */; };
-		962D9EC122483035008E5209 /* EnderecosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962D9EC022483035008E5209 /* EnderecosTableViewCell.swift */; };
 		962D9EC322486AAC008E5209 /* FotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962D9EC222486AAC008E5209 /* FotosCollectionViewController.swift */; };
 		963AF7B22241D4A2008A6D29 /* 1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 963AF7B12241D4A2008A6D29 /* 1024.png */; };
 		966930D5223ECE2800B72EFD /* PedidosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966930D4223ECE2800B72EFD /* PedidosTableViewController.swift */; };
@@ -66,7 +65,6 @@
 		960A6D4522446395005FC644 /* TelefoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelefoneViewModel.swift; sourceTree = "<group>"; };
 		960A6D47224463EF005FC644 /* PizzasPedidoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzasPedidoViewModel.swift; sourceTree = "<group>"; };
 		962D9EBE22482E6D008E5209 /* IPizza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IPizza.png; sourceTree = "<group>"; };
-		962D9EC022483035008E5209 /* EnderecosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnderecosTableViewCell.swift; sourceTree = "<group>"; };
 		962D9EC222486AAC008E5209 /* FotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotosCollectionViewController.swift; sourceTree = "<group>"; };
 		963AF7B12241D4A2008A6D29 /* 1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1024.png; sourceTree = "<group>"; };
 		966930D4223ECE2800B72EFD /* PedidosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosTableViewController.swift; sourceTree = "<group>"; };
@@ -166,7 +164,6 @@
 				96F5D0FE2246BF2600B7E6F8 /* TelefonesTableViewController.swift */,
 				96F5D1002246BF3D00B7E6F8 /* EditarTelefoneViewController.swift */,
 				96F5D1022247B8A000B7E6F8 /* MapaViewController.swift */,
-				962D9EC022483035008E5209 /* EnderecosTableViewCell.swift */,
 				962D9EC222486AAC008E5209 /* FotosCollectionViewController.swift */,
 				966A8D78224AE2E700B4C149 /* FotoCollectionViewCell.swift */,
 			);
@@ -285,7 +282,6 @@
 				57A3770222405D76005F840A /* PizzasPedido.swift in Sources */,
 				960A6D42224462CB005FC644 /* ClienteViewModel.swift in Sources */,
 				57F14A902245B1910037D679 /* SiteViewController.swift in Sources */,
-				962D9EC122483035008E5209 /* EnderecosTableViewCell.swift in Sources */,
 				966930F5223F29BB00B72EFD /* Pedido.swift in Sources */,
 				966930F8223F29BB00B72EFD /* Cliente.swift in Sources */,
 				960A6D3E22443B66005FC644 /* EditarPizzaViewController.swift in Sources */,
