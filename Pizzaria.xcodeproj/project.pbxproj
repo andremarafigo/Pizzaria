@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		57A3770222405D76005F840A /* PizzasPedido.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3770122405D76005F840A /* PizzasPedido.swift */; };
 		57A3770622406D68005F840A /* PopulaBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A3770522406D68005F840A /* PopulaBase.swift */; };
 		57A42048223C735B00488B78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A42047223C735B00488B78 /* AppDelegate.swift */; };
 		57A4204A223C735B00488B78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A42049223C735B00488B78 /* ViewController.swift */; };
@@ -29,12 +28,8 @@
 		963AF7B22241D4A2008A6D29 /* 1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 963AF7B12241D4A2008A6D29 /* 1024.png */; };
 		966930D5223ECE2800B72EFD /* PedidosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966930D4223ECE2800B72EFD /* PedidosTableViewController.swift */; };
 		966930E5223EF4E400B72EFD /* PedidoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966930E4223EF4E400B72EFD /* PedidoViewModel.swift */; };
-		966930F5223F29BB00B72EFD /* Pedido.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966930F0223F29BA00B72EFD /* Pedido.swift */; };
-		966930F6223F29BB00B72EFD /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966930F1223F29BA00B72EFD /* Pizza.swift */; };
-		966930F7223F29BB00B72EFD /* Telefone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966930F2223F29BA00B72EFD /* Telefone.swift */; };
-		966930F8223F29BB00B72EFD /* Cliente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966930F3223F29BB00B72EFD /* Cliente.swift */; };
-		966930F9223F29BB00B72EFD /* Endereco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966930F4223F29BB00B72EFD /* Endereco.swift */; };
 		966A8D79224AE2E700B4C149 /* FotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966A8D78224AE2E700B4C149 /* FotoCollectionViewCell.swift */; };
+		96AFDB362250684900EAA048 /* FotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AFDB352250684900EAA048 /* FotoViewController.swift */; };
 		96F5D0F72245D48100B7E6F8 /* ClientesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5D0F62245D48100B7E6F8 /* ClientesTableViewController.swift */; };
 		96F5D0F92245DC5100B7E6F8 /* EditarClienteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5D0F82245DC5100B7E6F8 /* EditarClienteViewController.swift */; };
 		96F5D0FB2246705400B7E6F8 /* EnderecosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F5D0FA2246705400B7E6F8 /* EnderecosTableViewController.swift */; };
@@ -45,7 +40,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		57A3770122405D76005F840A /* PizzasPedido.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzasPedido.swift; sourceTree = "<group>"; };
 		57A3770522406D68005F840A /* PopulaBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulaBase.swift; sourceTree = "<group>"; };
 		57A42044223C735B00488B78 /* Pizzaria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pizzaria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57A42047223C735B00488B78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,12 +63,8 @@
 		963AF7B12241D4A2008A6D29 /* 1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1024.png; sourceTree = "<group>"; };
 		966930D4223ECE2800B72EFD /* PedidosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosTableViewController.swift; sourceTree = "<group>"; };
 		966930E4223EF4E400B72EFD /* PedidoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidoViewModel.swift; sourceTree = "<group>"; };
-		966930F0223F29BA00B72EFD /* Pedido.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pedido.swift; sourceTree = "<group>"; };
-		966930F1223F29BA00B72EFD /* Pizza.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
-		966930F2223F29BA00B72EFD /* Telefone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Telefone.swift; sourceTree = "<group>"; };
-		966930F3223F29BB00B72EFD /* Cliente.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cliente.swift; sourceTree = "<group>"; };
-		966930F4223F29BB00B72EFD /* Endereco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endereco.swift; sourceTree = "<group>"; };
 		966A8D78224AE2E700B4C149 /* FotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		96AFDB352250684900EAA048 /* FotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FotoViewController.swift; sourceTree = "<group>"; };
 		96F5D0F62245D48100B7E6F8 /* ClientesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientesTableViewController.swift; sourceTree = "<group>"; };
 		96F5D0F82245DC5100B7E6F8 /* EditarClienteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarClienteViewController.swift; sourceTree = "<group>"; };
 		96F5D0FA2246705400B7E6F8 /* EnderecosTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnderecosTableViewController.swift; sourceTree = "<group>"; };
@@ -137,12 +127,6 @@
 		966930D0223ECC9F00B72EFD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				966930F3223F29BB00B72EFD /* Cliente.swift */,
-				966930F4223F29BB00B72EFD /* Endereco.swift */,
-				966930F0223F29BA00B72EFD /* Pedido.swift */,
-				966930F1223F29BA00B72EFD /* Pizza.swift */,
-				966930F2223F29BA00B72EFD /* Telefone.swift */,
-				57A3770122405D76005F840A /* PizzasPedido.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,6 +150,7 @@
 				96F5D1022247B8A000B7E6F8 /* MapaViewController.swift */,
 				962D9EC222486AAC008E5209 /* FotosCollectionViewController.swift */,
 				966A8D78224AE2E700B4C149 /* FotoCollectionViewCell.swift */,
+				96AFDB352250684900EAA048 /* FotoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -268,7 +253,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				96F5D1012246BF3D00B7E6F8 /* EditarTelefoneViewController.swift in Sources */,
-				966930F7223F29BB00B72EFD /* Telefone.swift in Sources */,
 				960A6D4422446339005FC644 /* EnderecoViewModel.swift in Sources */,
 				96F5D0F92245DC5100B7E6F8 /* EditarClienteViewController.swift in Sources */,
 				966930D5223ECE2800B72EFD /* PedidosTableViewController.swift in Sources */,
@@ -279,22 +263,18 @@
 				960A6D4622446395005FC644 /* TelefoneViewModel.swift in Sources */,
 				57A4204A223C735B00488B78 /* ViewController.swift in Sources */,
 				960A6D4022445776005FC644 /* PizzaViewlModel.swift in Sources */,
-				57A3770222405D76005F840A /* PizzasPedido.swift in Sources */,
 				960A6D42224462CB005FC644 /* ClienteViewModel.swift in Sources */,
 				57F14A902245B1910037D679 /* SiteViewController.swift in Sources */,
-				966930F5223F29BB00B72EFD /* Pedido.swift in Sources */,
-				966930F8223F29BB00B72EFD /* Cliente.swift in Sources */,
 				960A6D3E22443B66005FC644 /* EditarPizzaViewController.swift in Sources */,
 				57B164D52242FD0400752EE8 /* SaboresTableViewController.swift in Sources */,
 				96F5D0FD224676AD00B7E6F8 /* EditarEnderecoViewController.swift in Sources */,
 				96F5D0F72245D48100B7E6F8 /* ClientesTableViewController.swift in Sources */,
 				962D9EC322486AAC008E5209 /* FotosCollectionViewController.swift in Sources */,
 				57A42048223C735B00488B78 /* AppDelegate.swift in Sources */,
-				966930F6223F29BB00B72EFD /* Pizza.swift in Sources */,
 				96F5D0FB2246705400B7E6F8 /* EnderecosTableViewController.swift in Sources */,
 				966930E5223EF4E400B72EFD /* PedidoViewModel.swift in Sources */,
+				96AFDB362250684900EAA048 /* FotoViewController.swift in Sources */,
 				96F5D1032247B8A000B7E6F8 /* MapaViewController.swift in Sources */,
-				966930F9223F29BB00B72EFD /* Endereco.swift in Sources */,
 				966A8D79224AE2E700B4C149 /* FotoCollectionViewCell.swift in Sources */,
 				57A3770622406D68005F840A /* PopulaBase.swift in Sources */,
 			);

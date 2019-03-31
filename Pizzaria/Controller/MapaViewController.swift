@@ -39,10 +39,6 @@ class MapaViewController: UIViewController {
             self.view.addSubview(activityIndicator)
             
             let searchRequest = MKLocalSearch.Request()
-//            let rua : String = String("\(endereco!.nome_rua!)")
-//            let numero : String = String("\(endereco!.numero)")
-//            let cep : String = String("\(endereco!.cep!)")
-//            let local : String = String("\(rua), \(numero) - CEP:\(cep)")
             searchRequest.naturalLanguageQuery = endereco
             
             let activeSearch = MKLocalSearch(request: searchRequest)
@@ -55,10 +51,6 @@ class MapaViewController: UIViewController {
                                     if response == nil {
                                         print("ERRO")
                                     }else {
-                                        //Remover anotação
-                                        //let anotacoes = self.mapa.annotations
-                                        //self.mapa.removeAnnotation(anotacoes as! MKAnnotation)
-                                        
                                         //Busca dados
                                         let latitude = response?.boundingRegion.center.latitude
                                         let longitude = response?.boundingRegion.center.longitude

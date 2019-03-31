@@ -95,37 +95,6 @@ class EnderecosTableViewController: UITableViewController {
         }
     }
     
-//    func addEndereco(_ endereco : Endereco) {
-//        enderecos.append(endereco)
-//        clienteViewModel.listaEnderecos.append(endereco)
-//        clienteViewModel.saveData()
-//
-//        let cell = IndexPath(row: enderecos.count - 1, section: 0)
-//        tableView.beginUpdates()
-//        tableView.insertRows(at: [cell], with: .bottom)
-//        tableView.endUpdates()
-//    }
-    
-//    func editEndereco(_ endereco : Endereco) {
-//        var n = 0
-//        for e in (owner?.owner?.clientes.listaEnderecos)! {
-//            if e == endereco {
-//                owner?.owner?.clientes.listaEnderecos[n] = endereco
-//            }
-//            n += 1
-//        }
-//
-//        owner?.owner?.clientes.saveData()
-//        enderecos = []
-//        for x in (owner?.owner?.clientes.listaEnderecos)! {
-//            if x.cliente == owner?.editarCliente && x.cliente != nil{
-//                enderecos.append(x)
-//            }
-//        }
-//
-//        self.tableView.reloadData()
-//    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "criarEndereco" {
             let nextEditar = segue.destination as! EditarEnderecoViewController

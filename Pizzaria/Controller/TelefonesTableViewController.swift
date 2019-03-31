@@ -70,33 +70,7 @@ class TelefonesTableViewController: UITableViewController {
             }
         }
     }
-    /*
-    func addTelefone(_ telefone : Telefone) {
-        telefones.append(telefone)
-        owner?.owner?.clientes.listaTelefones.append(telefone)
-        owner?.owner?.clientes.saveData()
-        
-        let cell = IndexPath(row: telefones.count - 1, section: 0)
-        tableView.beginUpdates()
-        tableView.insertRows(at: [cell], with: .bottom)
-        tableView.endUpdates()
-    }
     
-    func editTelefone(_ telefone : Telefone) {
-        var n = 0
-        for e in (owner?.owner?.clientes.listaTelefones)! {
-            if e == telefone {
-                owner?.owner?.clientes.listaTelefones[n] = telefone
-            }
-            n += 1
-        }
-        
-        owner?.owner?.clientes.saveData()
-        
-        
-        self.tableView.reloadData()
-    }
-    */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let next = segue.destination as! EditarTelefoneViewController
         next.owner = self
