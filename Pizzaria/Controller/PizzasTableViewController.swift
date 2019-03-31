@@ -13,14 +13,13 @@ class PizzasTableViewController: UITableViewController {
     var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var pizzas : PizzaViewModel!
-    
-    //var selectedIndex: Int = -1
 
     override func viewDidLoad() {
         navigationItem.rightBarButtonItems?.append(editButtonItem)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        pizzas.loadData()
         tableView.reloadData()
     }
 
@@ -52,25 +51,6 @@ class PizzasTableViewController: UITableViewController {
             pizzas.deletData(pizzas.listaPizzas[indexPath.row])
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
-    }
-    
-    func addPizza(_ pizza : Pizza) {
-        pizzas.listaPizzas.append(pizza)
-        pizzas.saveData()
-        
-        let cell = IndexPath(row: pizzas.listaPizzas.count - 1, section: 0)
-        tableView.beginUpdates()
-        tableView.insertRows(at: [cell], with: .bottom)
-        tableView.endUpdates()
-    }
-    
-    func editPizza(_ pizza : Pizza) {
-        let index = tableView.indexPathForSelectedRow?.row
-        pizzas.listaPizzas[index!].sabor = pizza.sabor
-        pizzas.listaPizzas[index!].tamanho = pizza.tamanho
-        pizzas.listaPizzas[index!].valor = pizza.valor
-        pizzas.saveData()
-        self.tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

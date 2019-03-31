@@ -12,6 +12,8 @@ class TelefonesTableViewController: UITableViewController {
     
     var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    let clienteViewModel : ClienteViewModel = ClienteViewModel()
+    
     var owner : EditarClienteViewController?
     
     var telefones = [Telefone]()
@@ -21,6 +23,14 @@ class TelefonesTableViewController: UITableViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        telefones = []
+        clienteViewModel.loadData()
+        for x in (owner?.owner?.clientes.listaTelefones)! {
+            if x.cliente == owner?.editarCliente && x.cliente != nil{
+                telefones.append(x)
+            }
+        }
+        
         tableView.reloadData()
     }
     
@@ -48,9 +58,9 @@ class TelefonesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             var n = 0
-            for x in owner!.owner!.clientes.listaTelefones {
+            for x in clienteViewModel.listaTelefones {
                 if x == telefones[indexPath.row] {
-                    owner!.owner!.clientes.deleteTelefoneData(owner!.owner!.clientes.listaTelefones[n])
+                    clienteViewModel.deleteTelefoneData(clienteViewModel.listaTelefones[n])
                     telefones.remove(at: indexPath.row)
                     tableView.deleteRows(at: [indexPath], with: .fade)
                     self.tableView.reloadData()
@@ -60,7 +70,7 @@ class TelefonesTableViewController: UITableViewController {
             }
         }
     }
-    
+    /*
     func addTelefone(_ telefone : Telefone) {
         telefones.append(telefone)
         owner?.owner?.clientes.listaTelefones.append(telefone)
@@ -82,16 +92,11 @@ class TelefonesTableViewController: UITableViewController {
         }
         
         owner?.owner?.clientes.saveData()
-        telefones = []
-        for x in (owner?.owner?.clientes.listaTelefones)! {
-            if x.cliente == owner?.editarCliente && x.cliente != nil{
-                telefones.append(x)
-            }
-        }
+        
         
         self.tableView.reloadData()
     }
-    
+    */
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let next = segue.destination as! EditarTelefoneViewController
         next.owner = self

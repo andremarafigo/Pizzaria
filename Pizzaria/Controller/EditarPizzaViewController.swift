@@ -11,9 +11,13 @@ import UIKit
 class EditarPizzaViewController: UIViewController {
 
     var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
+    
+    let pizzaViewModel : PizzaViewModel = PizzaViewModel()
+    
     var owner : PizzasTableViewController?
+    
     var editarPizza : Pizza?
+    
     
     @IBOutlet weak var txtSabor: UITextField!
     @IBOutlet weak var txtTamanho: UITextField!
@@ -25,54 +29,39 @@ class EditarPizzaViewController: UIViewController {
             txtSabor.text = editarPizza?.sabor
             txtTamanho.text = editarPizza?.tamanho
             txtValor.text = String(editarPizza!.valor)
-            //lblMsg.text = ""
         }
     }
-
-//    @IBAction func onCancelarClick(sender: AnyObject){
-//        navigationController?.popViewController(animated: true)
-//    }
-
 
     @IBAction func btnSalvarClick(sender: AnyObject){
         
         if (editarPizza != nil) {
-            editarPizza!.sabor = txtSabor.text
-            editarPizza!.tamanho = txtTamanho.text
-            editarPizza!.valor = Double(txtValor.text!)!
-            
-            var x = 0
-            while x == 0 {
-                if txtSabor.text != "" && txtTamanho.text != "" && txtValor.text != ""{
-                    owner?.pizzas.saveData()
-                    self.viewWillAppear(true)
-//                    owner?.editPizza(editarPizza!)
-//                    navigationController?.popViewController(animated: true)
-                    x = 1
-                }else{
-                    lblMsg.text = "Todos os Campos São Obrigatórios!"
-                    break
-                }
+            if txtSabor.text != "" && txtTamanho.text != "" && txtValor.text != ""{
+                editarPizza!.sabor = txtSabor.text
+                editarPizza!.tamanho = txtTamanho.text
+                editarPizza!.valor = Double(txtValor.text!)!
+                
+                pizzaViewModel.saveData()
+                lblMsg.text = "Dados salvos com sucesso!"
+                
+                self.viewWillAppear(true)
+            }else{
+                lblMsg.text = "Todos os campos são obrigatórios!"
             }
-        }
-        else {
-            let p = Pizza(context: contexto)
-            
-            p.sabor = txtSabor.text
-            p.tamanho = txtTamanho.text
-            p.valor = Double(txtValor.text!)!
-            
-            var x = 0
-            while x == 0 {
-                if txtSabor.text != "" && txtTamanho.text != "" && txtValor.text != ""{
-                    owner?.addPizza(p)
-                    lblMsg.text = ""
-                    navigationController?.popViewController(animated: true)
-                    x = 1
-                }else{
-                    lblMsg.text = "Todos os Campos São Obrigatórios!"
-                    break
-                }
+        }else {
+            if txtSabor.text != "" && txtTamanho.text != "" && txtValor.text != ""{
+                editarPizza = Pizza(context: contexto)
+                editarPizza?.sabor = txtSabor.text
+                editarPizza?.tamanho = txtTamanho.text
+                editarPizza?.valor = Double(txtValor.text!)!
+                
+                pizzaViewModel.listaPizzas.append(editarPizza!)
+                pizzaViewModel.saveData()
+                
+                lblMsg.text = "Dados salvos com sucesso!"
+                
+                self.viewWillAppear(true)
+            }else{
+                lblMsg.text = "Todos os campos são obrigatórios!"
             }
         }
     }

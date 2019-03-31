@@ -19,6 +19,7 @@ class ClientesTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        clientes.loadData()
         tableView.reloadData()
     }
     
@@ -49,36 +50,6 @@ class ClientesTableViewController: UITableViewController {
             clientes.deleteClienteData(clientes.listaClientes[indexPath.row])
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
-    }
-    
-    func addCliente(_ cliente : Cliente) {
-        clientes.listaClientes.append(cliente)
-        clientes.saveData()
-        
-        let cell = IndexPath(row: clientes.listaClientes.count - 1, section: 0)
-        tableView.beginUpdates()
-        tableView.insertRows(at: [cell], with: .bottom)
-        tableView.endUpdates()
-    }
-    
-    func editCliente(_ cliente : Cliente) {
-        let index = tableView.indexPathForSelectedRow?.row
-        clientes.listaClientes[index!].nome = cliente.nome
-        clientes.listaClientes[index!].cpf = cliente.cpf
-        clientes.saveData()
-        self.tableView.reloadData()
-    }
-    
-    func editEndereco(_ enderecos : [Endereco]) {
-        clientes.listaEnderecos = enderecos
-        clientes.saveData()
-        self.tableView.reloadData()
-    }
-    
-    func editTelefone(_ telefones : [Telefone]) {
-        clientes.listaTelefones = telefones
-        clientes.saveData()
-        self.tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

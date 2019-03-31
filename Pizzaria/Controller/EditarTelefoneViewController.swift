@@ -28,65 +28,48 @@ class EditarTelefoneViewController: UIViewController {
             txtDDI.text = String(editarTelefone!.ddi)
             txtDDD.text = String(editarTelefone!.ddd)
             txtNumero.text = editarTelefone!.numero
-            //lblMsg.text = ""
         }
     }
-    @IBAction func btnCancelarClick(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
+    
     @IBAction func btnSalvarClick(_ sender: Any) {
         if (editarTelefone != nil) {
             var n = 0
-            let telefone = editarTelefone
-            editarTelefone!.ddi = Int16(txtDDI.text!)!
-            editarTelefone!.ddd = Int16(txtDDD.text!)!
-            editarTelefone!.numero = txtNumero.text
-            
-            for e in (owner?.owner?.owner?.clientes.listaTelefones)! {
-                if e == telefone {
-                    owner?.owner?.owner?.clientes.listaTelefones[n] = editarTelefone!
+            if editarTelefone!.cliente != nil && txtDDI.text != "" && txtDDD.text != "" && txtNumero.text != ""{
+                editarTelefone!.ddi = Int16(txtDDI.text!)!
+                editarTelefone!.ddd = Int16(txtDDD.text!)!
+                editarTelefone!.numero = txtNumero.text
+                
+                for e in (clienteViewModel.listaTelefones) {
+                    if e == editarTelefone {
+                        clienteViewModel.listaTelefones[n] = editarTelefone!
+                    }
+                    n += 1
                 }
-                n += 1
-            }
-            
-            var x = 0
-            while x == 0 {
-                if telefone!.cliente != nil && txtDDI.text != "" && txtDDD.text != "" && txtNumero.text != ""{
-                    clienteViewModel.saveData()
-                    
-                    //owner?.owner?.owner?.clientes.saveData()
-                    
-                    lblMsg.text = "Dados salvos com sucesso!"
-                    self.viewWillAppear(true)
-                    
-//                    owner?.editTelefone(editarTelefone!)
-//                    navigationController?.popViewController(animated: true)
-                    x = 1
-                }else{
-                    lblMsg.text = "Todos os campos são obrigatórios!"
-                    break
-                }
+                
+                clienteViewModel.saveData()
+                
+                lblMsg.text = "Dados salvos com sucesso!"
+                self.viewWillAppear(true)
+            }else{
+                lblMsg.text = "Todos os campos são obrigatórios!"
             }
         }
         else {
-            let t = Telefone(context: contexto)
+            if txtDDI.text != "" && txtDDD.text != "" && txtNumero.text != ""{
+                editarTelefone = Telefone(context: contexto)
+                editarTelefone!.cliente = owner?.owner?.editarCliente
+                editarTelefone!.ddi = Int16(txtDDI.text!)!
+                editarTelefone!.ddd = Int16(txtDDD.text!)!
+                editarTelefone!.numero = txtNumero.text
             
-            t.cliente = owner?.owner?.editarCliente
-            t.ddi = Int16(txtDDI.text!)!
-            t.ddd = Int16(txtDDD.text!)!
-            t.numero = txtNumero.text
-            
-            var x = 0
-            while x == 0 {
-                if t.cliente != nil && txtDDI.text != "" && txtDDD.text != "" && txtNumero.text != ""{
-                    owner?.addTelefone(t)
-                    lblMsg.text = ""
-                    navigationController?.popViewController(animated: true)
-                    x = 1
-                }else{
-                    lblMsg.text = "Todos os Campos São Obrigatórios!"
-                    break
-                }
+                clienteViewModel.listaTelefones.append(editarTelefone!)
+                clienteViewModel.saveData()
+                
+                lblMsg.text = "Dados salvos com sucesso!"
+                
+                self.viewWillAppear(true)
+            }else{
+                lblMsg.text = "Todos os Campos São Obrigatórios!"
             }
         }
     }

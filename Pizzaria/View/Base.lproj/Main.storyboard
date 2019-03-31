@@ -436,15 +436,15 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todos os Campos São Obrigatórios!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lF-rU-bYx">
-                                        <rect key="frame" x="42" y="204" width="291.5" height="26"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lF-rU-bYx">
+                                        <rect key="frame" x="20" y="204" width="335" height="26"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdQ-yd-Lu0">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdQ-yd-Lu0">
                                         <rect key="frame" x="161" y="238" width="53" height="26"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="Mapa"/>
@@ -454,7 +454,9 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="7lF-rU-bYx" firstAttribute="leading" secondItem="atQ-Gg-lQF" secondAttribute="leading" constant="20" id="Ryc-8Y-pId"/>
                                     <constraint firstAttribute="height" constant="264" id="cMo-mx-nO4"/>
+                                    <constraint firstAttribute="trailing" secondItem="7lF-rU-bYx" secondAttribute="trailing" constant="20" id="gjE-uY-SwY"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -507,7 +509,7 @@
                                         <rect key="frame" x="168.5" y="38" width="38.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DDD:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VlE-Uf-eR3">
                                         <rect key="frame" x="166.5" y="76" width="42.5" height="30"/>
@@ -519,7 +521,7 @@
                                         <rect key="frame" x="169.5" y="114" width="36.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Número:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yz2-0a-BmT">
                                         <rect key="frame" x="152" y="152" width="71" height="30"/>
@@ -531,15 +533,22 @@
                                         <rect key="frame" x="134.5" y="190" width="106.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Todos os Campos São Obrigatórios!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjv-yp-nGU">
-                                        <rect key="frame" x="42" y="228" width="291.5" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjv-yp-nGU">
+                                        <rect key="frame" x="20" y="228" width="335" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="rU1-dh-2zq"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="wjv-yp-nGU" firstAttribute="leading" secondItem="D8h-3S-n01" secondAttribute="leading" constant="20" id="Yf9-H4-hpl"/>
+                                    <constraint firstAttribute="trailing" secondItem="wjv-yp-nGU" secondAttribute="trailing" constant="20" id="mkR-yH-zbZ"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -552,11 +561,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Telefone" id="708-Za-Un9">
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="oPV-Ak-FhT"/>
-                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="Xrb-2L-xCa">
-                            <connections>
-                                <action selector="btnCancelarClick:" destination="A1y-ak-YE4" id="Ttz-Nk-dKx"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Salvar" id="mUM-O6-HaP">
                             <connections>
                                 <action selector="btnSalvarClick:" destination="A1y-ak-YE4" id="BOs-KO-HXA"/>
@@ -612,7 +616,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Telefones" id="cik-Km-gUM">
-                        <barButtonItem key="backBarButtonItem" title="Cancelar" id="wgX-YR-CyD"/>
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="wgX-YR-CyD"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6zY-iJ-4zM">
                             <connections>
                                 <segue destination="A1y-ak-YE4" kind="show" identifier="criarTelefone" id="pun-T2-ucU"/>
@@ -1164,7 +1168,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDD-3g-ajL">
                                         <rect key="frame" x="20" y="228" width="335" height="30"/>

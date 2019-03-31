@@ -16,6 +16,8 @@ class EnderecosTableViewController: UITableViewController {
 
     var contexto = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    let clienteViewModel : ClienteViewModel = ClienteViewModel()
+    
     var owner : EditarClienteViewController?
     
     var enderecos : [Endereco] = []
@@ -39,6 +41,14 @@ class EnderecosTableViewController: UITableViewController {
         rua = []
         numero = []
         cep = []
+        
+        enderecos = []
+        clienteViewModel.loadData()
+        for x in (clienteViewModel.listaEnderecos) {
+            if x.cliente == owner?.editarCliente && x.cliente != nil{
+                enderecos.append(x)
+            }
+        }
         
         tableView.reloadData()
     }
@@ -72,9 +82,9 @@ class EnderecosTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             var n = 0
-            for x in owner!.owner!.clientes.listaEnderecos {
+            for x in clienteViewModel.listaEnderecos {
                 if x == enderecos[indexPath.row] {
-                    owner!.owner!.clientes.deleteEnderecoData(owner!.owner!.clientes.listaEnderecos[n])
+                    clienteViewModel.deleteEnderecoData(clienteViewModel.listaEnderecos[n])
                     enderecos.remove(at: indexPath.row)
                     tableView.deleteRows(at: [indexPath], with: .fade)
                     self.tableView.reloadData()
@@ -85,47 +95,49 @@ class EnderecosTableViewController: UITableViewController {
         }
     }
     
-    func addEndereco(_ endereco : Endereco) {
-        enderecos.append(endereco)
-        owner?.owner?.clientes.listaEnderecos.append(endereco)
-        owner?.owner?.clientes.saveData()
-        
-        let cell = IndexPath(row: enderecos.count - 1, section: 0)
-        tableView.beginUpdates()
-        tableView.insertRows(at: [cell], with: .bottom)
-        tableView.endUpdates()
-    }
+//    func addEndereco(_ endereco : Endereco) {
+//        enderecos.append(endereco)
+//        clienteViewModel.listaEnderecos.append(endereco)
+//        clienteViewModel.saveData()
+//
+//        let cell = IndexPath(row: enderecos.count - 1, section: 0)
+//        tableView.beginUpdates()
+//        tableView.insertRows(at: [cell], with: .bottom)
+//        tableView.endUpdates()
+//    }
     
-    func editEndereco(_ endereco : Endereco) {
-        var n = 0
-        for e in (owner?.owner?.clientes.listaEnderecos)! {
-            if e == endereco {
-                owner?.owner?.clientes.listaEnderecos[n] = endereco
-            }
-            n += 1
-        }
-        
-        owner?.owner?.clientes.saveData()
-        enderecos = []
-        for x in (owner?.owner?.clientes.listaEnderecos)! {
-            if x.cliente == owner?.editarCliente && x.cliente != nil{
-                enderecos.append(x)
-            }
-        }
-        
-        self.tableView.reloadData()
-    }
+//    func editEndereco(_ endereco : Endereco) {
+//        var n = 0
+//        for e in (owner?.owner?.clientes.listaEnderecos)! {
+//            if e == endereco {
+//                owner?.owner?.clientes.listaEnderecos[n] = endereco
+//            }
+//            n += 1
+//        }
+//
+//        owner?.owner?.clientes.saveData()
+//        enderecos = []
+//        for x in (owner?.owner?.clientes.listaEnderecos)! {
+//            if x.cliente == owner?.editarCliente && x.cliente != nil{
+//                enderecos.append(x)
+//            }
+//        }
+//
+//        self.tableView.reloadData()
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "criarEndereco" {
             let nextEditar = segue.destination as! EditarEnderecoViewController
             nextEditar.owner = self
             nextEditar.editarEndereco = nil
-        }else if segue.identifier == "editarEndereco" {
+        }
+        else if segue.identifier == "editarEndereco" {
             let nextEditar = segue.destination as! EditarEnderecoViewController
             nextEditar.owner = self
             nextEditar.editarEndereco = enderecos[(tableView.indexPathForSelectedRow?.row)!]
-        }else if segue.identifier == "mapaView" {
+        }
+        else if segue.identifier == "mapaView" {
             let botao = sender as! UIButton
             let content = botao.superview
             let cell = content!.superview as! UITableViewCell

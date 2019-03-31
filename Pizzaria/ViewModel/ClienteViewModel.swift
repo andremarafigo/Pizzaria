@@ -34,9 +34,9 @@ class ClienteViewModel {
             
             let e = Endereco(context: contexto)
             e.cliente = listaClientes[0]
-            e.cep = "111111-111"
-            e.nome_rua = "Rua 01"
-            e.numero = 1
+            e.cep = "80215-901"
+            e.nome_rua = "R. Imac. Conceicao, Paraná"
+            e.numero = 1155
             listaEnderecos.append(e)
             saveData()
             
